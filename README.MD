@@ -35,7 +35,7 @@ import { SampleModule } from 'common-utility-js';
     BrowserModule,
 
     // Specify your library as an import
-    LibraryModule
+    SampleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SampleComponent } from './sample.component';
 import { SampleDirective } from './sample.directive';
 import { SamplePipe } from './sample.pipe';
-import { SampleService } from './sample.service';
+import { JSONFilterService } from './json-filter.service';
 
 export * from './sample.component';
 export * from './sample.directive';
@@ -29,7 +29,7 @@ export class SampleModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: SampleModule,
-      providers: [SampleService]
+      providers: [JSONFilterService]
     };
   }
 }
