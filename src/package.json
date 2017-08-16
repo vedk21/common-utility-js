@@ -1,0 +1,28 @@
+{
+  "name": "common-utility-js",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vedk21/common-utility-js.git"
+  },
+  "author": {
+    "name": "vedant kakade",
+    "email": "vedant99kakade@gmail.com"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vedk21/common-utility-js.git/issues"
+  },
+  "main": "common-utility-js.umd.js",
+  "module": "common-utility-js.js",
+  "jsnext:main": "common-utility-js.js",
+  "typings": "common-utility-js.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}
