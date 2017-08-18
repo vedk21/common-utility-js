@@ -25,7 +25,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import your library
-import { SampleModule } from 'common-utility-js';
+import { CommonUtilityModule } from 'common-utility-js';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { SampleModule } from 'common-utility-js';
     BrowserModule,
 
     // Specify your library as an import
-    SampleModule
+    CommonUtilityModule
   ],
   providers: [],
   bootstrap: [AppComponent]

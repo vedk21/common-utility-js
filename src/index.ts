@@ -8,7 +8,7 @@ import { JSONFilterService } from './json-filter.service';
 export * from './sample.component';
 export * from './sample.directive';
 export * from './sample.pipe';
-export * from './sample.service';
+export * from './json-filter.service';
 
 @NgModule({
   imports: [
@@ -25,10 +25,10 @@ export * from './sample.service';
     SamplePipe
   ]
 })
-export class SampleModule {
+export class CommonUtilityModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: SampleModule,
+      ngModule: CommonUtilityModule,
       providers: [JSONFilterService]
     };
   }
