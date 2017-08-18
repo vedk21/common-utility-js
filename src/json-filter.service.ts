@@ -45,7 +45,9 @@ export class JSONFilterService {
    */
   _mergeJsonsIntoTarget(targetJson: any, jsonArray: Array<any>) {
     if (typeof targetJson == 'object') {
-      jsonQ.merge(true, targetJson, jsonArray);
+      jsonArray.unshift(targetJson);
+      jsonArray.unshift(true);
+      jsonQ.merge(jsonArray);
     } else {
       throw new TypeError("Incompatible type for targetJson: it must be an array or an object");
     }
@@ -53,13 +55,15 @@ export class JSONFilterService {
 
   /**
    * [_mergeJsons merge jsons into new json]
-   * @param  {any}        Json [ source json ]
+   * @param  {any}        json [ source json ]
    * @param  {Array<any>} jsonArray  [ json array to merged ]
    * @return {[object]}                [ new merged json ]
    */
-  _mergeJsons(Json: any, jsonArray: Array<any>) {
-    if (typeof Json == 'object') {
-      return jsonQ.merge({}, Json, jsonArray);
+  _mergeJsons(json: any, jsonArray: Array<any>) {
+    if (typeof json == 'object') {
+      jsonArray.unshift(json);
+      jsonArray.unshift({});
+      return jsonQ.merge(jsonArray);
     } else {
       throw new TypeError("Incompatible type for targetJson: it must be an array or an object");
     }
