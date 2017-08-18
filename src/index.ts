@@ -23,13 +23,12 @@ export * from './json-filter.service';
     SampleComponent,
     SampleDirective,
     SamplePipe
+  ],
+  providers: [
+    JSONFilterService
   ]
+
 })
 export class CommonUtilityModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: CommonUtilityModule,
-      providers: [JSONFilterService]
-    };
-  }
+
 }
