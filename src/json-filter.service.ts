@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 declare var crossfilter: any;
 declare var jsonQ: any;
 
-import '../node_modules/crossfilter/crossfilter.min.js';
-import '../node_modules/jsonq/jsonQ.min.js';
+import 'crossfilter/crossfilter.min.js';
+import 'jsonq/jsonQ.min.js';
 
 @Injectable()
 export class JSONFilterService {
