@@ -70,13 +70,13 @@ export class JSONFilterService {
   }
 
   /**
-   * [findIndexOfJson find index of json into targetJson using search as an object or an array ]
+   * [_findIndexOfJson find index of json into targetJson using search as an object or an array ]
    * @param  {any}     targetJson   [ json to be searched in ]
    * @param  {any}     jsonToSearch [ json object or an array to be searched in targetJson ]
    * @param  {boolean} qualifier    [ tells weather seconde jsonToSearch is qualifier or not, jsonToSearch can be direct object for which we want to find index or it can be a qualifier(part of object) ]
    * @return {[number]}               [ index of found json object or an array or -1 is returned if not found ]
    */
-  findIndexOfJson(targetJson: any, jsonToSearch: any, qualifier: boolean) {
+  _findIndexOfJson(targetJson: any, jsonToSearch: any, qualifier: boolean) {
     if (typeof targetJson == 'object' && typeof jsonToSearch == 'object') {
       return jsonQ.index(targetJson, jsonToSearch, qualifier);
     } else {
@@ -85,12 +85,12 @@ export class JSONFilterService {
   }
 
   /**
-   * [findIndexOfJson find index of json into targetJson using search as a custom function ]
+   * [_findIndexOfJson find index of json into targetJson using search as a custom function ]
    * @param  {any}     targetJson   [ json to be searched in ]
    * @param  {any}     jsonToSearch [ custom functional logic to search json in targetJson ]
    * @return {[number]}               [ index of found json object or an array or -1 is returned if not found ]
    */
-  findIndexOfJsonUsingCustomQualifier(targetJson: any, functionToSearch) {
+  _findIndexOfJsonUsingCustomQualifier(targetJson: any, functionToSearch) {
     if (typeof targetJson == 'object') {
       if (typeof functionToSearch == 'function') {
         return jsonQ.index(targetJson, functionToSearch, true);
@@ -101,5 +101,18 @@ export class JSONFilterService {
       throw new TypeError("Incompatible type for targetJson: it must be an array or an object");
     }
   }
+
+  /**
+   * 
+   * 
+   * @param {*} sourceJson 
+   * @returns 
+   * @memberof JSONFilterService
+   */
+  _cloneJson(sourceJson: any) {
+    return jsonQ.clone(sourceJson);
+  }
+
+  
 
 }
