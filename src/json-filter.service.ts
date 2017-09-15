@@ -44,10 +44,11 @@ export class JSONFilterService {
    * @return {[type]}                [description]
    */
   _mergeJsonsIntoTarget(targetJson: any, jsonArray: Array<any>) {
+    let clone_json = this._cloneJson(jsonArray);
     if (typeof targetJson == 'object') {
-      jsonArray.unshift(targetJson);
-      jsonArray.unshift(true);
-      jsonQ.merge(jsonArray);
+      clone_json.unshift(targetJson);
+      clone_json.unshift(true);
+      jsonQ.merge.apply(this, clone_json);
     } else {
       throw new TypeError("Incompatible type for targetJson: it must be an array or an object");
     }
@@ -60,14 +61,15 @@ export class JSONFilterService {
    * @return {[object]}                [ new merged json ]
    */
   _mergeJsons(json: any, jsonArray: Array<any>) {
+    let clone_json = this._cloneJson(jsonArray);
     if (typeof json == 'object') {
-      jsonArray.unshift(json);
+      clone_json.unshift(json);
       if (this._jsonType(json) === 'object') {
-        jsonArray.unshift({});
+        clone_json.unshift({});
       }else {
-        jsonArray.unshift([]);
+        clone_json.unshift([]);
       }
-      return jsonQ.merge(jsonArray);
+      return jsonQ.merge.apply(this, clone_json);
     } else {
       throw new TypeError("Incompatible type for targetJson: it must be an array or an object");
     }
@@ -77,12 +79,12 @@ export class JSONFilterService {
    * [_findIndexOfJson find index of json into targetJson using search as an object or an array ]
    * @param  {any}     targetJson   [ json to be searched in ]
    * @param  {any}     jsonToSearch [ json object or an array to be searched in targetJson ]
-   * @param  {boolean} qualifier    [ tells weather seconde jsonToSearch is qualifier or not, jsonToSearch can be direct object for which we want to find index or it can be a qualifier(part of object) ]
+   * @param  {boolean} qualifierFlag    [ tells weather second jsonToSearch is qualifier or not, jsonToSearch can be direct object for which we want to find index or it can be a qualifier(part of object) ]
    * @return {[number]}               [ index of found json object or an array or -1 is returned if not found ]
    */
-  _findIndexOfJson(targetJson: any, jsonToSearch: any, qualifier: boolean) {
+  _findIndexOfJson(targetJson: any, jsonToSearch: any, qualifierFlag: boolean) {
     if (typeof targetJson == 'object' && typeof jsonToSearch == 'object') {
-      return jsonQ.index(targetJson, jsonToSearch, qualifier);
+      return jsonQ.index(targetJson, jsonToSearch, qualifierFlag);
     } else {
       throw new TypeError("Incompatible type for targetJson or jsonToSearch: it must be an array or an object");
     }
@@ -91,15 +93,15 @@ export class JSONFilterService {
   /**
    * [_findIndexOfJson find index of json into targetJson using search as a custom function ]
    * @param  {any}     targetJson   [ json to be searched in ]
-   * @param  {any}     jsonToSearch [ custom functional logic to search json in targetJson ]
+   * @param  {any}     qualifier [ custom functional logic to search json in targetJson ]
    * @return {[number]}               [ index of found json object or an array or -1 is returned if not found ]
    */
-  _findIndexOfJsonUsingCustomQualifier(targetJson: any, functionToSearch) {
+  _findIndexOfJsonUsingCustomQualifier(targetJson: any, qualifier) {
     if (typeof targetJson == 'object') {
-      if (typeof functionToSearch == 'function') {
-        return jsonQ.index(targetJson, functionToSearch, true);
+      if (typeof qualifier == 'function' || typeof qualifier == 'object') {
+        return jsonQ.index(targetJson, qualifier, true);
       } else {
-        throw new TypeError("Incompatible type for functionToSearch: it must be a function handler");
+        throw new TypeError("Incompatible type for qualifier: it must be a function handler");
       }
     } else {
       throw new TypeError("Incompatible type for targetJson: it must be an array or an object");
