@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { SampleComponent } from './sample.component';
 import { SampleDirective } from './sample.directive';
 import { SamplePipe } from './sample.pipe';
-import { JSONFilterService } from './json-filter.service';
+import { JSONUtilityService } from './json-utility.service';
 
 export * from './sample.component';
 export * from './sample.directive';
 export * from './sample.pipe';
-export * from './json-filter.service';
+export * from './json-utility.service';
 
 @NgModule({
   imports: [
@@ -23,13 +23,12 @@ export * from './json-filter.service';
     SampleComponent,
     SampleDirective,
     SamplePipe
+  ],
+  providers: [
+    JSONUtilityService
   ]
+
 })
 export class CommonUtilityModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: CommonUtilityModule,
-      providers: [JSONFilterService]
-    };
-  }
+
 }
