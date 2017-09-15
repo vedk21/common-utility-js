@@ -43,29 +43,59 @@ import { CommonUtilityModule } from 'common-utility-js';
 export class AppModule { }
 ```
 
-Once your library is imported, you can use its components, directives and pipes in your Angular application:
+Once your library is imported, you can use its services (JSONFilterService) in your Angular application:
 
-```xml
-<!-- You can now use your library component in app.component.html -->
-<h1>
-  {{title}}
-</h1>
-<sampleComponent></sampleComponent>
+```typescript
+// You can now use your library service to utilize json filter services
+import { Component } from '@angular/core';
+import { JSONUtilityService } from 'common-utility-js';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+
+  constructor(private jsonFilter: JSONUtilityService) {}
+
+  // use JSONUtilityService methods to perform various operations on JSON
+  //for-example
+
+  getJsonFiltered() {
+    const jsonArray = [
+      {
+        key: 'qwerty',
+        val: 'asdfgh'
+      },
+      {
+        key: 'zxcvb',
+        val: 'lkjhg'
+      }
+    ];
+
+    let targetJson = [{
+      key: 'qwerty',
+      val: 'asdfgh'
+    }];
+
+    console.log('_foreach');
+    this.jsonFilter._foreach(jsonArray, (key, value) => {
+      console.log('key: ' + key + ' --> val: ' + JSON.stringify(value));
+    });
+
+    console.log('_jsonType');
+    console.log('type of json : ' + this.jsonFilter._jsonType(jsonArray[0].key));
+
+
+    console.log('_mergeJsons');
+    console.log(this.jsonFilter._mergeJsons(targetJson, jsonArray));
+
+    // you can also nest the methods to draw more filtered and useful output 
+    console.log(this.jsonFilter._jsonType(this.jsonFilter._mergeJsons(targetJson, jsonArray)));
+
 ```
 
-## Development
-
-To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
-
-```bash
-$ npm run build
-```
-
-To lint all `*.ts` files:
-
-```bash
-$ npm run lint
-```
 
 ## License
 
