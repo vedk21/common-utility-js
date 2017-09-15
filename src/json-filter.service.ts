@@ -62,7 +62,11 @@ export class JSONFilterService {
   _mergeJsons(json: any, jsonArray: Array<any>) {
     if (typeof json == 'object') {
       jsonArray.unshift(json);
-      jsonArray.unshift({});
+      if(this._jsonType(json) === 'object'){
+        jsonArray.unshift({});
+      }else{
+        jsonArray.unshift([]);
+      }
       return jsonQ.merge(jsonArray);
     } else {
       throw new TypeError("Incompatible type for targetJson: it must be an array or an object");
