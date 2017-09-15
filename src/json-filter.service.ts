@@ -62,9 +62,9 @@ export class JSONFilterService {
   _mergeJsons(json: any, jsonArray: Array<any>) {
     if (typeof json == 'object') {
       jsonArray.unshift(json);
-      if(this._jsonType(json) === 'object'){
+      if (this._jsonType(json) === 'object') {
         jsonArray.unshift({});
-      }else{
+      }else {
         jsonArray.unshift([]);
       }
       return jsonQ.merge(jsonArray);
