@@ -255,7 +255,7 @@ export class JSONUtilityService {
     }
 
     /**
-     * [_setPathValueInJson set value into a targetJson using pathToFind ]
+     * [_prettifyJson get pretty string of json ]
      * @param  {any}      targetJson [source json from which you want to get data]
      * @param  {boolean} htmlReturn [ true, if you want result as html string]
      * @return {[string]}              [ string formatted json ]
@@ -273,7 +273,7 @@ export class JSONUtilityService {
      **************************************************************************************************/
 
     /**
-     *
+     * [_getValueFromJson get all the values from json matching a key ]
      * @param targetJson             [ source json from which you want to get data ]
      * @param {string} keyToFind     [ actual key whose value to find ]
      * @return {[array]}              [ returns array of values if available ]
@@ -287,7 +287,7 @@ export class JSONUtilityService {
     }
 
     /**
-     *
+     * [_getPathForKeyInJson get path from json matching a key ]
      * @param targetJson             [ source json from which you want to find path ]
      * @param {string} keyToFind     [ actual key whose path to find ]
      * @return {[array]}              [ returns array defining the path of key ]
@@ -301,7 +301,7 @@ export class JSONUtilityService {
     }
 
     /**
-     *
+     * [_getUniqueElements get unique elements from json matching a key ]
      * @param targetJson             [ source json from which you want to find value ]
      * @param {string} keyToFind     [ actual key whose value to find ]
      * @return {[array]}              [ returns an array of unique values. ]
