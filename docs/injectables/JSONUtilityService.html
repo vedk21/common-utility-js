@@ -340,10 +340,22 @@
                             <td class="col-md-4">
                                 <ul class="index-list">
                                     <li>
+                                         <a href="#_appendValueAtIndexToJson">_appendValueAtIndexToJson</a>
+                                    </li>
+                                    <li>
+                                         <a href="#_appendValueToJson">_appendValueToJson</a>
+                                    </li>
+                                    <li>
                                          <a href="#_checkIfJsonsAreIdentical">_checkIfJsonsAreIdentical</a>
                                     </li>
                                     <li>
                                          <a href="#_cloneJson">_cloneJson</a>
+                                    </li>
+                                    <li>
+                                         <a href="#_findAllValuesInJson">_findAllValuesInJson</a>
+                                    </li>
+                                    <li>
+                                         <a href="#_findClosestKeyInJson">_findClosestKeyInJson</a>
                                     </li>
                                     <li>
                                          <a href="#_findCommonElementsFromJsons">_findCommonElementsFromJsons</a>
@@ -364,16 +376,40 @@
                                          <a href="#_findNthElementInJson">_findNthElementInJson</a>
                                     </li>
                                     <li>
+                                         <a href="#_findParentsInJson">_findParentsInJson</a>
+                                    </li>
+                                    <li>
+                                         <a href="#_findSiblingsInJson">_findSiblingsInJson</a>
+                                    </li>
+                                    <li>
                                          <a href="#_foreach">_foreach</a>
                                     </li>
                                     <li>
                                          <a href="#_getAllUniqueElementsFromJson">_getAllUniqueElementsFromJson</a>
                                     </li>
                                     <li>
+                                         <a href="#_getFilteredListFromJson">_getFilteredListFromJson</a>
+                                    </li>
+                                    <li>
+                                         <a href="#_getIndexForKeyInJson">_getIndexForKeyInJson</a>
+                                    </li>
+                                    <li>
+                                         <a href="#_getJsonqObject">_getJsonqObject</a>
+                                    </li>
+                                    <li>
+                                         <a href="#_getNthValueInJson">_getNthValueInJson</a>
+                                    </li>
+                                    <li>
                                          <a href="#_getPathForKeyInJson">_getPathForKeyInJson</a>
                                     </li>
                                     <li>
-                                         <a href="#_getPathValueFromJson">_getPathValueFromJson</a>
+                                         <a href="#_getPathForKeyInJsonqObject">_getPathForKeyInJsonqObject</a>
+                                    </li>
+                                    <li>
+                                         <a href="#_getPathValueForKeyFromJson">_getPathValueForKeyFromJson</a>
+                                    </li>
+                                    <li>
+                                         <a href="#_getPathValueFromJsonqObject">_getPathValueFromJsonqObject</a>
                                     </li>
                                     <li>
                                          <a href="#_getUnionOfJsons">_getUnionOfJsons</a>
@@ -382,10 +418,13 @@
                                          <a href="#_getUniqueElements">_getUniqueElements</a>
                                     </li>
                                     <li>
-                                         <a href="#_getValueFromJson">_getValueFromJson</a>
+                                         <a href="#_getValueFromJsonqobj">_getValueFromJsonqobj</a>
                                     </li>
                                     <li>
                                          <a href="#_jsonType">_jsonType</a>
+                                    </li>
+                                    <li>
+                                         <a href="#_loopJsonqObject">_loopJsonqObject</a>
                                     </li>
                                     <li>
                                          <a href="#_mergeJsons">_mergeJsons</a>
@@ -394,10 +433,22 @@
                                          <a href="#_mergeJsonsIntoTarget">_mergeJsonsIntoTarget</a>
                                     </li>
                                     <li>
+                                         <a href="#_prependValueToJson">_prependValueToJson</a>
+                                    </li>
+                                    <li>
                                          <a href="#_prettifyJson">_prettifyJson</a>
                                     </li>
                                     <li>
-                                         <a href="#_setPathValueInJson">_setPathValueInJson</a>
+                                         <a href="#_refreshJsonqObject">_refreshJsonqObject</a>
+                                    </li>
+                                    <li>
+                                         <a href="#_setPathValueForKeyInJson">_setPathValueForKeyInJson</a>
+                                    </li>
+                                    <li>
+                                         <a href="#_setPathValueToJsonqObject">_setPathValueToJsonqObject</a>
+                                    </li>
+                                    <li>
+                                         <a href="#_setValueToJson">_setValueToJson</a>
                                     </li>
                                 </ul>
                             </td>
@@ -434,6 +485,152 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
+                                    <a name="_appendValueAtIndexToJson"></a>
+                                    <b> _appendValueAtIndexToJson</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>_appendValueAtIndexToJson(jsonqObj: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, valToSet: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="620" class="link-to-prism">src/json-utility.service.ts:620</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>[_appendValueAtIndexToJson append value at index into json against a key ]</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>jsonqObj</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ it must be an jsonQ type object ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>valToSet</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ value to append in json against a key (can be a valid json type) ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>index</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ index at which you want to append value ]</p>
+            </td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="_appendValueToJson"></a>
+                                    <b> _appendValueToJson</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>_appendValueToJson(jsonqObj: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, valToSet: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="583" class="link-to-prism">src/json-utility.service.ts:583</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>[_appendValueToJson append value into json against a key ]</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>jsonqObj</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ it must be an jsonQ type object ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>valToSet</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ value to append in json against a key (can be a valid json type) ]</p>
+            </td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
                                     <a name="_checkIfJsonsAreIdentical"></a>
                                     <b> _checkIfJsonsAreIdentical</b>
                                 </td>
@@ -447,7 +644,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="181" class="link-to-prism">src/json-utility.service.ts:181</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="201" class="link-to-prism">src/json-utility.service.ts:201</a></div>
                                         </td>
                                     </tr>
             
@@ -489,7 +686,7 @@
                                         <div>
                                         </div>
                                         <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
             
                                         </div>
                                             <div class="io-description">
@@ -516,7 +713,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="116" class="link-to-prism">src/json-utility.service.ts:116</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="136" class="link-to-prism">src/json-utility.service.ts:136</a></div>
                                         </td>
                                     </tr>
             
@@ -564,6 +761,168 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
+                                    <a name="_findAllValuesInJson"></a>
+                                    <b> _findAllValuesInJson</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>_findAllValuesInJson(targetJson: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, keyToFind: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, qualifier: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, outputValues: )</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="433" class="link-to-prism">src/json-utility.service.ts:433</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>[_findAllValuesInJson find all values from json matching a key ]</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>targetJson</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ source json from which you want to find values ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>keyToFind</td>
+                                                              <td>
+                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                              </td>
+                                                              <td><p>[ actual key whose value to find ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>qualifier</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ by default value is null, if null find all all values without filter, to filter result pass a function or a part of object to search ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>outputValues</td>
+                                                              <td>
+                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                              </td>
+                                                              <td><p>[ default is false, if false actual values array will be returned or if true returns jsonq object for further processing ]</p>
+            </td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="_findClosestKeyInJson"></a>
+                                    <b> _findClosestKeyInJson</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>_findClosestKeyInJson(jsonqObj: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, keyToFind: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, outputValues: )</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="512" class="link-to-prism">src/json-utility.service.ts:512</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>[_findClosestKeyInJson find the closest key values going upward in json ]</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>jsonqObj</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ it must be an jsonQ type object ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>keyToFind</td>
+                                                              <td>
+                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                              </td>
+                                                              <td><p>[ actual closest key whose value to find ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>outputValues</td>
+                                                              <td>
+                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                              </td>
+                                                              <td><p>[ default is false, if false actual values array will be returned or if true returns jsonq object for further processing ]</p>
+            </td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
                                     <a name="_findCommonElementsFromJsons"></a>
                                     <b> _findCommonElementsFromJsons</b>
                                 </td>
@@ -577,7 +936,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="207" class="link-to-prism">src/json-utility.service.ts:207</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="227" class="link-to-prism">src/json-utility.service.ts:227</a></div>
                                         </td>
                                     </tr>
             
@@ -637,7 +996,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="129" class="link-to-prism">src/json-utility.service.ts:129</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="149" class="link-to-prism">src/json-utility.service.ts:149</a></div>
                                         </td>
                                     </tr>
             
@@ -714,7 +1073,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="145" class="link-to-prism">src/json-utility.service.ts:145</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="165" class="link-to-prism">src/json-utility.service.ts:165</a></div>
                                         </td>
                                     </tr>
             
@@ -782,7 +1141,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/json-utility.service.ts:85</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="105" class="link-to-prism">src/json-utility.service.ts:105</a></div>
                                         </td>
                                     </tr>
             
@@ -859,7 +1218,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/json-utility.service.ts:99</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="119" class="link-to-prism">src/json-utility.service.ts:119</a></div>
                                         </td>
                                     </tr>
             
@@ -928,7 +1287,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="163" class="link-to-prism">src/json-utility.service.ts:163</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="183" class="link-to-prism">src/json-utility.service.ts:183</a></div>
                                         </td>
                                     </tr>
             
@@ -984,6 +1343,160 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
+                                    <a name="_findParentsInJson"></a>
+                                    <b> _findParentsInJson</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>_findParentsInJson(jsonqObj: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, keyToFind: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, outputValues: )</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="488" class="link-to-prism">src/json-utility.service.ts:488</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>[_findParentsInJson find all parents values from json matching a key ]</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>jsonqObj</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ it must be an jsonQ type object ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>keyToFind</td>
+                                                              <td>
+                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                              </td>
+                                                              <td><p>[ actual sibling key whose value to find ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>outputValues</td>
+                                                              <td>
+                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                              </td>
+                                                              <td><p>[ default is false, if false actual values array will be returned or if true returns jsonq object for further processing ]</p>
+            </td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="_findSiblingsInJson"></a>
+                                    <b> _findSiblingsInJson</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>_findSiblingsInJson(jsonqObj: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, keyToFind: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, outputValues: )</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="464" class="link-to-prism">src/json-utility.service.ts:464</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>[_findSiblingsInJson find all values of sibling key from json ]</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>jsonqObj</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ it must be an jsonQ type object ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>keyToFind</td>
+                                                              <td>
+                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                              </td>
+                                                              <td><p>[ actual sibling key whose value to find ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>outputValues</td>
+                                                              <td>
+                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                              </td>
+                                                              <td><p>[ default is false, if false actual values array will be returned or if true returns jsonq object for further processing ]</p>
+            </td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
                                     <a name="_foreach"></a>
                                     <b> _foreach</b>
                                 </td>
@@ -997,7 +1510,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/json-utility.service.ts:23</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/json-utility.service.ts:35</a></div>
                                         </td>
                                     </tr>
             
@@ -1030,7 +1543,7 @@
                                                               <td>
                                                                       <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank" >Function</a></code>
                                                               </td>
-                                                              <td><p>[ Logic you want to apply on each loop ]</p>
+                                                              <td><p>[ callback function containing key and value ]</p>
             </td>
                                                             </tr>
                                                     </tbody>
@@ -1043,7 +1556,8 @@
             
                                         </div>
                                             <div class="io-description">
-                                                
+                                                <p>[void]</p>
+            
                                             </div>
                                 </td>
                             </tr>
@@ -1066,7 +1580,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="220" class="link-to-prism">src/json-utility.service.ts:220</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="240" class="link-to-prism">src/json-utility.service.ts:240</a></div>
                                         </td>
                                     </tr>
             
@@ -1113,25 +1627,27 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <a name="_getPathForKeyInJson"></a>
-                                    <b> _getPathForKeyInJson</b>
+                                    <a name="_getFilteredListFromJson"></a>
+                                    <b> _getFilteredListFromJson</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>_getPathForKeyInJson(targetJson: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, keyToFind: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+            <code>_getFilteredListFromJson(jsonqObj: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, qualifier: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, outputValues: )</code>
                                 </td>
                             </tr>
             
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="295" class="link-to-prism">src/json-utility.service.ts:295</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="536" class="link-to-prism">src/json-utility.service.ts:536</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>[_getFilteredListFromJson filter the jsonq object using qualifier filter ]</p>
+            </div>
             
                                         <div class="io-description">
                                                 <b>Parameters :</b>
@@ -1145,18 +1661,27 @@
                                                     </thead>
                                                     <tbody>
                                                             <tr>
-                                                              <td>targetJson</td>
+                                                              <td>jsonqObj</td>
                                                               <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
                                                               </td>
-                                                              <td><p>[ source json from which you want to find path ]</p>
+                                                              <td><p>[ it must be an jsonQ type object ]</p>
             </td>
                                                             </tr>
                                                             <tr>
-                                                              <td>keyToFind</td>
+                                                              <td>qualifier</td>
                                                               <td>
-                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
                                                               </td>
-                                                              <td><p>[ actual key whose path to find ]</p>
+                                                              <td><p>[ custom functional logic to search json in targetJson or an json object or json array  ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>outputValues</td>
+                                                              <td>
+                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                              </td>
+                                                              <td><p>[ default is false, if false actual values array will be returned or if true returns jsonq object for further processing ]</p>
             </td>
                                                             </tr>
                                                     </tbody>
@@ -1179,26 +1704,326 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <a name="_getPathValueFromJson"></a>
-                                    <b> _getPathValueFromJson</b>
+                                    <a name="_getIndexForKeyInJson"></a>
+                                    <b> _getIndexForKeyInJson</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>_getPathValueFromJson(targetJson: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, pathToFind: string[])</code>
+            <code>_getIndexForKeyInJson(josnqObj: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, qualifier: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                                 </td>
                             </tr>
             
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="234" class="link-to-prism">src/json-utility.service.ts:234</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="349" class="link-to-prism">src/json-utility.service.ts:349</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
-                                        <div class="io-description"><p>[_getPathValueFromJson find elements from targetJson using json pathToFind]</p>
+                                        <div class="io-description"><p>[_getIndexForKeyInJson get path from json matching a key ]</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>josnqObj</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ it must be an jsonQ type object ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>qualifier</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ to filter result pass a function or a part of object to search for index ]</p>
+            </td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="_getJsonqObject"></a>
+                                    <b> _getJsonqObject</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>_getJsonqObject(targetJson: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/json-utility.service.ts:17</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="_getNthValueInJson"></a>
+                                    <b> _getNthValueInJson</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>_getNthValueInJson(josnqObj: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="389" class="link-to-prism">src/json-utility.service.ts:389</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>[_getNthValueInJson get value from json at nth index ]</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>josnqObj</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ it must be an jsonQ type object ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>index</td>
+                                                              <td>
+                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                              </td>
+                                                              <td><p>[ index of array  ]</p>
+            </td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="_getPathForKeyInJson"></a>
+                                    <b> _getPathForKeyInJson</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>_getPathForKeyInJson(targetJson: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, keyToFind: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="254" class="link-to-prism">src/json-utility.service.ts:254</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>[_getPathForKeyInJson get path from json matching a key ]</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>targetJson</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ source json from which you want to find path ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>keyToFind</td>
+                                                              <td>
+                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                              </td>
+                                                              <td><p>[ actual key whose path to find ]</p>
+            </td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>Array&lt;string&gt;</code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="_getPathForKeyInJsonqObject"></a>
+                                    <b> _getPathForKeyInJsonqObject</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>_getPathForKeyInJsonqObject(jsonqObject: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="331" class="link-to-prism">src/json-utility.service.ts:331</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>[_getPathForKeyInJsonqObject get path from json matching a key ]</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>jsonqObject</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ it must be an jsonQ type object ]</p>
+            </td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>Array&lt;string&gt;</code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="_getPathValueForKeyFromJson"></a>
+                                    <b> _getPathValueForKeyFromJson</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>_getPathValueForKeyFromJson(targetJson: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, pathToFind: Array<string>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="268" class="link-to-prism">src/json-utility.service.ts:268</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>[_getPathValueForKeyFromJson find elements from targetJson using json pathToFind]</p>
             </div>
             
                                         <div class="io-description">
@@ -1223,8 +2048,78 @@
                                                             <tr>
                                                               <td>pathToFind</td>
                                                               <td>
+                                                                      <code>Array</code>
                                                               </td>
                                                               <td><p>[ path array which contains all key to reach a particular value in JSON ]</p>
+            </td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="_getPathValueFromJsonqObject"></a>
+                                    <b> _getPathValueFromJsonqObject</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>_getPathValueFromJsonqObject(josnqObj: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, path: Array<string>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="371" class="link-to-prism">src/json-utility.service.ts:371</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>[_getPathValueFromJsonqObject get value from json matching a path ]</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>josnqObj</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ it must be an jsonQ type object ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>path</td>
+                                                              <td>
+                                                                      <code>Array</code>
+                                                              </td>
+                                                              <td><p>[ array containing path strings which is a path of key in json ]</p>
             </td>
                                                             </tr>
                                                     </tbody>
@@ -1260,7 +2155,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="194" class="link-to-prism">src/json-utility.service.ts:194</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="214" class="link-to-prism">src/json-utility.service.ts:214</a></div>
                                         </td>
                                     </tr>
             
@@ -1320,12 +2215,14 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="309" class="link-to-prism">src/json-utility.service.ts:309</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="411" class="link-to-prism">src/json-utility.service.ts:411</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>[_getUniqueElements get unique elements from json matching a key ]</p>
+            </div>
             
                                         <div class="io-description">
                                                 <b>Parameters :</b>
@@ -1341,6 +2238,7 @@
                                                             <tr>
                                                               <td>targetJson</td>
                                                               <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
                                                               </td>
                                                               <td><p>[ source json from which you want to find value ]</p>
             </td>
@@ -1373,25 +2271,27 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <a name="_getValueFromJson"></a>
-                                    <b> _getValueFromJson</b>
+                                    <a name="_getValueFromJsonqobj"></a>
+                                    <b> _getValueFromJsonqobj</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>_getValueFromJson(targetJson: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, keyToFind: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+            <code>_getValueFromJsonqobj(jsonqObj: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                                 </td>
                             </tr>
             
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="281" class="link-to-prism">src/json-utility.service.ts:281</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="314" class="link-to-prism">src/json-utility.service.ts:314</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>[_getValueFromJsonqobj get all the values from jsonq object ]</p>
+            </div>
             
                                         <div class="io-description">
                                                 <b>Parameters :</b>
@@ -1405,18 +2305,11 @@
                                                     </thead>
                                                     <tbody>
                                                             <tr>
-                                                              <td>targetJson</td>
+                                                              <td>jsonqObj</td>
                                                               <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
                                                               </td>
-                                                              <td><p>[ source json from which you want to get data ]</p>
-            </td>
-                                                            </tr>
-                                                            <tr>
-                                                              <td>keyToFind</td>
-                                                              <td>
-                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                              </td>
-                                                              <td><p>[ actual key whose value to find ]</p>
+                                                              <td><p>[ jsonq object ]</p>
             </td>
                                                             </tr>
                                                     </tbody>
@@ -1452,7 +2345,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/json-utility.service.ts:34</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/json-utility.service.ts:54</a></div>
                                         </td>
                                     </tr>
             
@@ -1486,7 +2379,76 @@
                                         <div>
                                         </div>
                                         <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                <p>[type of json in string format]</p>
+            
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="_loopJsonqObject"></a>
+                                    <b> _loopJsonqObject</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>_loopJsonqObject(jsonqObj: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, callback: )</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="661" class="link-to-prism">src/json-utility.service.ts:661</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>[_loopJsonqObject loop through jsonq object finding key, value and path of json ]</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>jsonqObj</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ it must be an jsonQ type object ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>callback</td>
+                                                              <td>
+                                                              </td>
+                                                              <td><p>[ callback function containing key, value, path  ]</p>
+            </td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
             
                                         </div>
                                             <div class="io-description">
@@ -1513,7 +2475,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/json-utility.service.ts:61</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/json-utility.service.ts:81</a></div>
                                         </td>
                                     </tr>
             
@@ -1582,7 +2544,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/json-utility.service.ts:44</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/json-utility.service.ts:64</a></div>
                                         </td>
                                     </tr>
             
@@ -1638,6 +2600,75 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
+                                    <a name="_prependValueToJson"></a>
+                                    <b> _prependValueToJson</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>_prependValueToJson(jsonqObj: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, valToSet: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="601" class="link-to-prism">src/json-utility.service.ts:601</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>[_prependValueToJson prepend value into json against a key ]</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>jsonqObj</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ it must be an jsonQ type object ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>valToSet</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ value to prepend in json against a key (can be a valid json type) ]</p>
+            </td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
                                     <a name="_prettifyJson"></a>
                                     <b> _prettifyJson</b>
                                 </td>
@@ -1651,13 +2682,13 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="263" class="link-to-prism">src/json-utility.service.ts:263</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="297" class="link-to-prism">src/json-utility.service.ts:297</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
-                                        <div class="io-description"><p>[_setPathValueInJson set value into a targetJson using pathToFind ]</p>
+                                        <div class="io-description"><p>[_prettifyJson get pretty string of json ]</p>
             </div>
             
                                         <div class="io-description">
@@ -1707,26 +2738,87 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <a name="_setPathValueInJson"></a>
-                                    <b> _setPathValueInJson</b>
+                                    <a name="_refreshJsonqObject"></a>
+                                    <b> _refreshJsonqObject</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>_setPathValueInJson(targetJson: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, pathToFind: string[], valueToSet: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+            <code>_refreshJsonqObject(jsonqObj: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                                 </td>
                             </tr>
             
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="249" class="link-to-prism">src/json-utility.service.ts:249</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="682" class="link-to-prism">src/json-utility.service.ts:682</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
-                                        <div class="io-description"><p>[_setPathValueInJson set value into a targetJson using pathToFind ]</p>
+                                        <div class="io-description"><p>[_refreshJsonqObject After any manipulation on jsonQ object you must call refresh method. ]</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>jsonqObj</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ it must be an jsonQ type object ]</p>
+            </td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="_setPathValueForKeyInJson"></a>
+                                    <b> _setPathValueForKeyInJson</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>_setPathValueForKeyInJson(targetJson: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, pathToFind: Array<string>, valueToSet: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="283" class="link-to-prism">src/json-utility.service.ts:283</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>[_setPathValueForKeyInJson set value into a targetJson using pathToFind ]</p>
             </div>
             
                                         <div class="io-description">
@@ -1751,6 +2843,7 @@
                                                             <tr>
                                                               <td>pathToFind</td>
                                                               <td>
+                                                                      <code>Array</code>
                                                               </td>
                                                               <td><p>[path array which contains all key to reach a particular value in JSON]</p>
             </td>
@@ -1779,6 +2872,152 @@
                             </tr>
                         </tbody>
                     </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="_setPathValueToJsonqObject"></a>
+                                    <b> _setPathValueToJsonqObject</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>_setPathValueToJsonqObject(jsonqObj: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, valToSet: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, path: Array<string>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="643" class="link-to-prism">src/json-utility.service.ts:643</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>[_setPathValueToJsonqObject set value at path into json against a key ]</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>jsonqObj</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ it must be an jsonQ type object ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>valToSet</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ value to set in json against a path of key (can be a valid json type) ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>path</td>
+                                                              <td>
+                                                                      <code>Array</code>
+                                                              </td>
+                                                              <td><p>[ path array which contains all key to reach a particular value in JSON ]</p>
+            </td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="_setValueToJson"></a>
+                                    <b> _setValueToJson</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>_setValueToJson(jsonqObj: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, valToSet: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="565" class="link-to-prism">src/json-utility.service.ts:565</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>[_setValueToJson set value into json against a key ]</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>jsonqObj</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ it must be an jsonQ type object ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>valToSet</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ value to set in json against a key (can be a valid json type) ]</p>
+            </td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
             </section>
 
     </div>
@@ -1798,27 +3037,47 @@ export class JSONUtilityService {
     constructor() { }
 
     /**************************************************************************************************
+     * Initialize jsonq object using json object or array
+     **************************************************************************************************/
+
+    _getJsonqObject(targetJson: any): any {
+        if (targetJson &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+            return jsonQ(targetJson);
+        } else {
+            throw new TypeError(&#x27;Incompatible type for targetJson: it must be an array or an object&#x27;);
+        }
+    }
+
+    /**************************************************************************************************
      * Basic Utility functions used with JSON
      **************************************************************************************************/
 
     /**
      * [_foreach To loop around the passed json object or array ]
      * @param  {any}      json_elm [ json object or array ]
-     * @param  {Function} callback [ Logic you want to apply on each loop ]
-     * @return {[type]}            [description]
+     * @param  {Function} callback [ callback function containing key and value ]
+     * @returns {[void]}            [void]
      */
-    _foreach(json_elm: any, callback) {
-        jsonQ.each(json_elm, (key, value) &#x3D;&gt; {
-            callback(key, value);
-        });
+    _foreach(json_elm: any, callback): void {
+        if (typeof json_elm &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+            if (callback &amp;&amp; typeof callback &#x3D;&#x3D;&#x3D; &#x27;function&#x27;) {
+                jsonQ.each(json_elm, (key, value) &#x3D;&gt; {
+                    callback(key, value);
+                });
+            } else {
+                throw new TypeError(&#x27;Incompatible type for callback: it must be a callback function&#x27;);
+            }
+        } else {
+            throw new TypeError(&#x27;Incompatible type for json_elm: it must be an array or an object&#x27;);
+        }
     }
 
     /**
      * [_jsonType get the type of json ]
      * @param  {any}    json_elm [json]
-     * @return {[string]}          [type of json in string format]
+     * @returns {[string]}          [type of json in string format]
      */
-    _jsonType(json_elm: any) {
+    _jsonType(json_elm: any): string {
         return jsonQ.objType(json_elm);
     }
 
@@ -1965,7 +3224,7 @@ export class JSONUtilityService {
      * @param  {any}    jsonB [second json to be checked]
      * @return {[boolean]}       [returns true if found identical]
      */
-    _checkIfJsonsAreIdentical(jsonA: any, jsonB: any) {
+    _checkIfJsonsAreIdentical(jsonA: any, jsonB: any): boolean {
         if (typeof jsonA &#x3D;&#x3D;&#x3D; &#x27;object&#x27; &amp;&amp; typeof jsonB &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
             return jsonQ.identical(jsonA, jsonB);
         } else {
@@ -2013,12 +3272,26 @@ export class JSONUtilityService {
     }
 
     /**
-     * [_getPathValueFromJson find elements from targetJson using json pathToFind]
-     * @param  {any}      targetJson [source json from which you want to get data ]
-     * @param  {string[]} pathToFind [ path array which contains all key to reach a particular value in JSON ]
-     * @return {[any]}              [ returned elements which mathced the path ]
+     * [_getPathForKeyInJson get path from json matching a key ]
+     * @param {any} targetJson             [ source json from which you want to find path ]
+     * @param {string} keyToFind     [ actual key whose path to find ]
+     * @return {[Array&lt;string&gt;]}              [ returns array containing strings having the path of key ]
      */
-    _getPathValueFromJson(targetJson: any, pathToFind: string[]) {
+    _getPathForKeyInJson(targetJson: any, keyToFind: string): Array&lt;string&gt; {
+        if (typeof targetJson &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+            return jsonQ(targetJson).find(keyToFind).path();
+        } else {
+            throw new TypeError(&#x27;Incompatible type for targetJson : it must be an array or an object&#x27;);
+        }
+    }
+
+    /**
+     * [_getPathValueForKeyFromJson find elements from targetJson using json pathToFind]
+     * @param  {any}      targetJson [source json from which you want to get data ]
+     * @param  {Array&lt;string&gt;} pathToFind [ path array which contains all key to reach a particular value in JSON ]
+     * @return {[any]}              [ returned elements which matched the path ]
+     */
+    _getPathValueForKeyFromJson(targetJson: any, pathToFind: Array&lt;string&gt;) {
         if (typeof targetJson &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
             return jsonQ.pathValue(targetJson, pathToFind);
         } else {
@@ -2027,13 +3300,13 @@ export class JSONUtilityService {
     }
 
     /**
-     * [_setPathValueInJson set value into a targetJson using pathToFind ]
+     * [_setPathValueForKeyInJson set value into a targetJson using pathToFind ]
      * @param  {any}      targetJson [source json from which you want to get data]
-     * @param  {string[]} pathToFind [path array which contains all key to reach a particular value in JSON]
+     * @param  {Array&lt;string&gt;} pathToFind [path array which contains all key to reach a particular value in JSON]
      * @param  {any}      valueToSet [value you want to set to targetJson]
-     * @return {[type]}              [returns value if set ]
+     * @return {[type]}              [returns json if set ]
      */
-    _setPathValueInJson(targetJson: any, pathToFind: string[], valueToSet: any) {
+    _setPathValueForKeyInJson(targetJson: any, pathToFind: Array&lt;string&gt;, valueToSet: any) {
         if (typeof targetJson &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
             return jsonQ.setPathValue(targetJson, pathToFind, valueToSet);
         } else {
@@ -2042,7 +3315,7 @@ export class JSONUtilityService {
     }
 
     /**
-     * [_setPathValueInJson set value into a targetJson using pathToFind ]
+     * [_prettifyJson get pretty string of json ]
      * @param  {any}      targetJson [source json from which you want to get data]
      * @param  {boolean} htmlReturn [ true, if you want result as html string]
      * @return {[string]}              [ string formatted json ]
@@ -2060,36 +3333,104 @@ export class JSONUtilityService {
      **************************************************************************************************/
 
     /**
-     *
-     * @param targetJson             [ source json from which you want to get data ]
-     * @param {string} keyToFind     [ actual key whose value to find ]
+     * [_getValueFromJsonqobj get all the values from jsonq object ]
+     * @param {any} jsonqObj             [ jsonq object ]
      * @return {[array]}              [ returns array of values if available ]
      */
-    _getValueFromJson(targetJson: any, keyToFind: string) {
-      if (typeof targetJson &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
-          return jsonQ(targetJson).find(keyToFind).value();
+    _getValueFromJsonqobj(jsonqObj: any) {
+      if (typeof jsonqObj &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+          try {
+              return jsonQ(jsonqObj).value();
+          } catch (err) {
+              throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an jsonQ type object&#x27;);
+          }
       } else {
           throw new TypeError(&#x27;Incompatible type for targetJson : it must be an array or an object&#x27;);
       }
     }
 
     /**
-     *
-     * @param targetJson             [ source json from which you want to find path ]
-     * @param {string} keyToFind     [ actual key whose path to find ]
-     * @return {[array]}              [ returns array defining the path of key ]
+     * [_getPathForKeyInJsonqObject get path from json matching a key ]
+     * @param {any} jsonqObject             [ it must be an jsonQ type object ]
+     * @return {[Array&lt;string&gt;]}              [ returns array containing strings having the path of key ]
      */
-    _getPathForKeyInJson(targetJson: any, keyToFind: string) {
-        if (typeof targetJson &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
-            return jsonQ(targetJson).find(keyToFind).path();
+    _getPathForKeyInJsonqObject(jsonqObject: any): Array&lt;string&gt; {
+        if (typeof jsonqObject &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+            try {
+                return jsonqObject.path();
+            } catch (err) {
+                throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an jsonQ type object&#x27;);
+            }
         } else {
             throw new TypeError(&#x27;Incompatible type for targetJson : it must be an array or an object&#x27;);
         }
     }
 
     /**
-     *
-     * @param targetJson             [ source json from which you want to find value ]
+     * [_getIndexForKeyInJson get path from json matching a key ]
+     * @param {any} josnqObj             [ it must be an jsonQ type object ]
+     * @param {any} qualifier     [ to filter result pass a function or a part of object to search for index ]
+     * @return {[number]}              [ returns index if value found, if not returns -1 ]
+     */
+    _getIndexForKeyInJson(josnqObj: any, qualifier: any): number {
+        if (typeof josnqObj &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+            if (typeof qualifier &#x3D;&#x3D;&#x3D; &#x27;function&#x27; || typeof qualifier &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+                try {
+                    return josnqObj.index(qualifier);
+                } catch (err) {
+                    throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an jsonQ type object&#x27;);
+                }
+            } else {
+                throw new TypeError(&#x27;Incompatible type for keyTofind : it must be an array or an object or an function&#x27;);
+            }
+        } else {
+            throw new TypeError(&#x27;Incompatible type for targetJson : it must be an array or an object&#x27;);
+        }
+    }
+
+    /**
+     * [_getPathValueFromJsonqObject get value from json matching a path ]
+     * @param {any} josnqObj             [ it must be an jsonQ type object ]
+     * @param {Array&lt;string&gt;} path     [ array containing path strings which is a path of key in json ]
+     * @return {[any]}              [ returns value at path specified ]
+     */
+    _getPathValueFromJsonqObject(josnqObj: any, path: Array&lt;string&gt;): any {
+        if (typeof josnqObj &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+            try {
+                return josnqObj.pathValue(path);
+            } catch (err) {
+                throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an jsonQ type object&#x27;);
+            }
+        } else {
+            throw new TypeError(&#x27;Incompatible type for targetJson : it must be an array or an object&#x27;);
+        }
+    }
+
+    /**
+     * [_getNthValueInJson get value from json at nth index ]
+     * @param {any} josnqObj             [ it must be an jsonQ type object ]
+     * @param {number} index     [ index of array  ]
+     * @return {[any]}              [ returns value at path specified ]
+     */
+    _getNthValueInJson(josnqObj: any, index: number): any {
+        if (typeof josnqObj &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+            if (index &gt;&#x3D; 0) {
+                try {
+                    return josnqObj.nthElm(index);
+                } catch (err) {
+                    throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an jsonQ type object&#x27;);
+                }
+            } else {
+                throw new TypeError(&#x27;index must be a positive number&#x27;);
+            }
+        } else {
+            throw new TypeError(&#x27;Incompatible type for targetJson : it must be an array or an object&#x27;);
+        }
+    }
+
+    /**
+     * [_getUniqueElements get unique elements from json matching a key ]
+     * @param {any} targetJson             [ source json from which you want to find value ]
      * @param {string} keyToFind     [ actual key whose value to find ]
      * @return {[array]}              [ returns an array of unique values. ]
      */
@@ -2098,6 +3439,281 @@ export class JSONUtilityService {
             return jsonQ(targetJson).find(keyToFind).unique();
         } else {
             throw new TypeError(&#x27;Incompatible type for targetJson : it must be an array or an object&#x27;);
+        }
+    }
+
+    /**************************************************************************************************
+     * Basic traverse and filter functions used with JSON
+     **************************************************************************************************/
+
+    /* tslint:disable */
+    /**
+     * [_findAllValuesInJson find all values from json matching a key ]
+     * @param {any} targetJson             [ source json from which you want to find values ]
+     * @param {string} keyToFind     [ actual key whose value to find ]
+     * @param {any} qualifier     [ by default value is null, if null find all all values without filter, to filter result pass a function or a part of object to search ]
+     * @param {boolean} outputValues     [ default is false, if false actual values array will be returned or if true returns jsonq object for further processing ]
+     * @return {[any]}              [ return value depends on &#x27;outputValues&#x27; flag if &#x27;outputValues&#x27; true actual values array will be returned or if &#x27;outputValues&#x27; false returns jsonq object for further processing ]
+     */
+    /* tslint:enable */
+    _findAllValuesInJson(targetJson: any, keyToFind: string, qualifier: any &#x3D; null, outputValues &#x3D; false): any {
+        if (typeof targetJson &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+            if (qualifier !&#x3D;&#x3D; null) {
+                if (typeof qualifier &#x3D;&#x3D;&#x3D; &#x27;function&#x27; || typeof qualifier &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+                    if (outputValues) {
+                        return jsonQ(targetJson).find(keyToFind, qualifier).value();
+                    }
+                    return jsonQ(targetJson).find(keyToFind, qualifier);
+                } else {
+                    throw new TypeError(&#x27;Incompatible type for keyTofind : it must be an array or an object or an function&#x27;);
+                }
+            } else {
+                if (outputValues) {
+                    return jsonQ(targetJson).find(keyToFind).value();
+                }
+                return jsonQ(targetJson).find(keyToFind);
+            }
+        } else {
+            throw new TypeError(&#x27;Incompatible type for targetJson : it must be an array or an object&#x27;);
+        }
+    }
+
+    /* tslint:disable */
+    /**
+     * [_findSiblingsInJson find all values of sibling key from json ]
+     * @param {any} jsonqObj             [ it must be an jsonQ type object ]
+     * @param {string} keyToFind     [ actual sibling key whose value to find ]
+     * @param {boolean} outputValues     [ default is false, if false actual values array will be returned or if true returns jsonq object for further processing ]
+     * @return {[any]}              [ return value depends on &#x27;outputValues&#x27; flag if &#x27;outputValues&#x27; true actual values array will be returned or if &#x27;outputValues&#x27; false returns jsonq object for further processing ]
+     */
+    /* tslint:enable */
+    _findSiblingsInJson(jsonqObj: any, keyToFind: string, outputValues &#x3D; false): any {
+        if (typeof jsonqObj &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+            try {
+                if (outputValues) {
+                    return jsonqObj.sibling(keyToFind).value();
+                }
+                return jsonqObj.sibling(keyToFind);
+            } catch (err) {
+                throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an jsonQ type object&#x27;);
+            }
+        } else {
+            throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an array or an object&#x27;);
+        }
+    }
+
+    /* tslint:disable */
+    /**
+     * [_findParentsInJson find all parents values from json matching a key ]
+     * @param {any} jsonqObj             [ it must be an jsonQ type object ]
+     * @param {string} keyToFind     [ actual sibling key whose value to find ]
+     * @param {boolean} outputValues     [ default is false, if false actual values array will be returned or if true returns jsonq object for further processing ]
+     * @return {[any]}              [ return value depends on &#x27;outputValues&#x27; flag if &#x27;outputValues&#x27; true actual values array will be returned or if &#x27;outputValues&#x27; false returns jsonq object for further processing ]
+     */
+    /* tslint:enable */
+    _findParentsInJson(jsonqObj: any, keyToFind: string, outputValues &#x3D; false): any {
+        if (typeof jsonqObj &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+            try {
+                if (outputValues) {
+                    return jsonqObj.parent(keyToFind).value();
+                }
+                return jsonqObj.parent(keyToFind);
+            } catch (err) {
+                throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an jsonQ type object&#x27;);
+            }
+        } else {
+            throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an array or an object&#x27;);
+        }
+    }
+
+    /* tslint:disable */
+    /**
+     * [_findClosestKeyInJson find the closest key values going upward in json ]
+     * @param {any} jsonqObj             [ it must be an jsonQ type object ]
+     * @param {string} keyToFind     [ actual closest key whose value to find ]
+     * @param {boolean} outputValues     [ default is false, if false actual values array will be returned or if true returns jsonq object for further processing ]
+     * @return {[any]}              [ return value depends on &#x27;outputValues&#x27; flag if &#x27;outputValues&#x27; true actual values array will be returned or if &#x27;outputValues&#x27; false returns jsonq object for further processing ]
+     */
+    /* tslint:enable */
+    _findClosestKeyInJson(jsonqObj: any, keyToFind: string, outputValues &#x3D; false): any {
+        if (typeof jsonqObj &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+            try {
+                if (outputValues) {
+                    return jsonqObj.closest(keyToFind).value();
+                }
+                return jsonqObj.closest(keyToFind);
+            } catch (err) {
+                throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an jsonQ type object&#x27;);
+            }
+        } else {
+            throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an array or an object&#x27;);
+        }
+    }
+
+    /* tslint:disable */
+    /**
+     * [_getFilteredListFromJson filter the jsonq object using qualifier filter ]
+     * @param {any} jsonqObj             [ it must be an jsonQ type object ]
+     * @param {any} qualifier     [ custom functional logic to search json in targetJson or an json object or json array  ]
+     * @param {boolean} outputValues     [ default is false, if false actual values array will be returned or if true returns jsonq object for further processing ]
+     * @return {[any]}              [ return filtered value depends on &#x27;outputValues&#x27; flag if &#x27;outputValues&#x27; true actual values array will be returned or if &#x27;outputValues&#x27; false returns jsonq object for further processing ]
+     */
+    /* tslint:enable */
+    _getFilteredListFromJson(jsonqObj: any, qualifier: any, outputValues &#x3D; false): any {
+        if ( typeof jsonqObj &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+            if (typeof qualifier &#x3D;&#x3D;&#x3D; &#x27;function&#x27; || typeof qualifier &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+                try {
+                    if (outputValues) {
+                        return jsonqObj.filter(qualifier).value();
+                    }
+                    return jsonqObj.filter(qualifier);
+                } catch (err) {
+                    throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an jsonQ type object&#x27;);
+                }
+            } else {
+                throw new TypeError(&#x27;Incompatible type for qualifier : it must be an array or an object or a function&#x27;);
+            }
+        } else {
+            throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an array or an object&#x27;);
+        }
+    }
+
+    /**************************************************************************************************
+     * Basic json data manipulation functions used with JSON
+     **************************************************************************************************/
+
+    /**
+     * [_setValueToJson set value into json against a key ]
+     * @param {any} jsonqObj             [ it must be an jsonQ type object ]
+     * @param {any} valToSet     [ value to set in json against a key (can be a valid json type) ]
+     * @return {[void]}              [ void ]
+     */
+    _setValueToJson(jsonqObj: any, valToSet: any): void {
+        if ( typeof jsonqObj &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+                try {
+                    return jsonqObj.value(valToSet);
+                } catch (err) {
+                    throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an jsonQ type object&#x27;);
+                }
+        } else {
+            throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an array or an object&#x27;);
+        }
+    }
+
+    /**
+     * [_appendValueToJson append value into json against a key ]
+     * @param {any} jsonqObj             [ it must be an jsonQ type object ]
+     * @param {any} valToSet     [ value to append in json against a key (can be a valid json type) ]
+     * @return {[void]}              [ void ]
+     */
+    _appendValueToJson(jsonqObj: any, valToSet: any): void {
+        if ( typeof jsonqObj &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+            try {
+                return jsonqObj.append(valToSet);
+            } catch (err) {
+                throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an jsonQ type object&#x27;);
+            }
+        } else {
+            throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an array or an object&#x27;);
+        }
+    }
+
+    /**
+     * [_prependValueToJson prepend value into json against a key ]
+     * @param {any} jsonqObj             [ it must be an jsonQ type object ]
+     * @param {any} valToSet     [ value to prepend in json against a key (can be a valid json type) ]
+     * @return {[void]}              [ void ]
+     */
+    _prependValueToJson(jsonqObj: any, valToSet: any): void {
+        if ( typeof jsonqObj &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+            try {
+                return jsonqObj.prepend(valToSet);
+            } catch (err) {
+                throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an jsonQ type object&#x27;);
+            }
+        } else {
+            throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an array or an object&#x27;);
+        }
+    }
+
+    /**
+     * [_appendValueAtIndexToJson append value at index into json against a key ]
+     * @param {any} jsonqObj             [ it must be an jsonQ type object ]
+     * @param {any} valToSet     [ value to append in json against a key (can be a valid json type) ]
+     * @param {any} index     [ index at which you want to append value ]
+     * @return {[void]}              [ void ]
+     */
+    _appendValueAtIndexToJson(jsonqObj: any, valToSet: any, index: number): void {
+        if ( typeof jsonqObj &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+            if (index &gt;&#x3D; 0) {
+                try {
+                    return jsonqObj.appendAt(index, valToSet);
+                } catch (err) {
+                    throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an jsonQ type object&#x27;);
+                }
+            } else {
+                throw new TypeError(&#x27;index must be a positive number&#x27;);
+            }
+        } else {
+            throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an jsonQ type object&#x27;);
+        }
+    }
+
+    /**
+     * [_setPathValueToJsonqObject set value at path into json against a key ]
+     * @param {any} jsonqObj             [ it must be an jsonQ type object ]
+     * @param {any} valToSet     [ value to set in json against a path of key (can be a valid json type) ]
+     * @param {Array&lt;string&gt;} path     [ path array which contains all key to reach a particular value in JSON ]
+     * @return {[void]}              [ void ]
+     */
+    _setPathValueToJsonqObject(jsonqObj: any, valToSet: any, path: Array&lt;string&gt;): void {
+        if ( typeof jsonqObj &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+            try {
+                return jsonqObj.setPathValue(path, valToSet);
+            } catch (err) {
+                throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an jsonQ type object&#x27;);
+            }
+        } else {
+            throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an jsonQ type object&#x27;);
+        }
+    }
+
+    /**
+     * [_loopJsonqObject loop through jsonq object finding key, value and path of json ]
+     * @param {any} jsonqObj             [ it must be an jsonQ type object ]
+     * @param {[Function]} callback             [ callback function containing key, value, path  ]
+     * @return {[void]}              [ void ]
+     */
+    _loopJsonqObject(jsonqObj: any, callback): void {
+        if ( typeof jsonqObj &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+            if (callback &amp;&amp; typeof callback &#x3D;&#x3D;&#x3D; &#x27;function&#x27;) {
+                try {
+                    return jsonqObj.each(callback);
+                } catch (err) {
+                    throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an jsonQ type object&#x27;);
+                }
+            } else {
+                throw new TypeError(&#x27;Incompatible type for callback: it must be a callback function&#x27;);
+            }
+        } else {
+            throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an jsonQ type object&#x27;);
+        }
+    }
+
+    /**
+     * [_refreshJsonqObject After any manipulation on jsonQ object you must call refresh method. ]
+     * @param {any} jsonqObj             [ it must be an jsonQ type object ]
+     * @return {[void]}              [ void ]
+     */
+    _refreshJsonqObject(jsonqObj: any): void {
+        if ( typeof jsonqObj &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+            try {
+                jsonqObj.refresh();
+            } catch (err) {
+                throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an jsonQ type object&#x27;);
+            }
+        } else {
+            throw new TypeError(&#x27;Incompatible type for jsonqObj : it must be an jsonQ type object&#x27;);
         }
     }
 }

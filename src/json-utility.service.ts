@@ -11,27 +11,47 @@ export class JSONUtilityService {
     constructor() { }
 
     /**************************************************************************************************
+     * Initialize jsonq object using json object or array
+     **************************************************************************************************/
+
+    _getJsonqObject(targetJson: any): any {
+        if (targetJson === 'object') {
+            return jsonQ(targetJson);
+        } else {
+            throw new TypeError('Incompatible type for targetJson: it must be an array or an object');
+        }
+    }
+
+    /**************************************************************************************************
      * Basic Utility functions used with JSON
      **************************************************************************************************/
 
     /**
      * [_foreach To loop around the passed json object or array ]
      * @param  {any}      json_elm [ json object or array ]
-     * @param  {Function} callback [ Logic you want to apply on each loop ]
-     * @return {[type]}            [description]
+     * @param  {Function} callback [ callback function containing key and value ]
+     * @returns {[void]}            [void]
      */
-    _foreach(json_elm: any, callback) {
-        jsonQ.each(json_elm, (key, value) => {
-            callback(key, value);
-        });
+    _foreach(json_elm: any, callback): void {
+        if (typeof json_elm === 'object') {
+            if (callback && typeof callback === 'function') {
+                jsonQ.each(json_elm, (key, value) => {
+                    callback(key, value);
+                });
+            } else {
+                throw new TypeError('Incompatible type for callback: it must be a callback function');
+            }
+        } else {
+            throw new TypeError('Incompatible type for json_elm: it must be an array or an object');
+        }
     }
 
     /**
      * [_jsonType get the type of json ]
      * @param  {any}    json_elm [json]
-     * @return {[string]}          [type of json in string format]
+     * @returns {[string]}          [type of json in string format]
      */
-    _jsonType(json_elm: any) {
+    _jsonType(json_elm: any): string {
         return jsonQ.objType(json_elm);
     }
 
@@ -178,7 +198,7 @@ export class JSONUtilityService {
      * @param  {any}    jsonB [second json to be checked]
      * @return {[boolean]}       [returns true if found identical]
      */
-    _checkIfJsonsAreIdentical(jsonA: any, jsonB: any) {
+    _checkIfJsonsAreIdentical(jsonA: any, jsonB: any): boolean {
         if (typeof jsonA === 'object' && typeof jsonB === 'object') {
             return jsonQ.identical(jsonA, jsonB);
         } else {
@@ -226,12 +246,26 @@ export class JSONUtilityService {
     }
 
     /**
-     * [_getPathValueFromJson find elements from targetJson using json pathToFind]
-     * @param  {any}      targetJson [source json from which you want to get data ]
-     * @param  {string[]} pathToFind [ path array which contains all key to reach a particular value in JSON ]
-     * @return {[any]}              [ returned elements which mathced the path ]
+     * [_getPathForKeyInJson get path from json matching a key ]
+     * @param {any} targetJson             [ source json from which you want to find path ]
+     * @param {string} keyToFind     [ actual key whose path to find ]
+     * @return {[Array<string>]}              [ returns array containing strings having the path of key ]
      */
-    _getPathValueFromJson(targetJson: any, pathToFind: string[]) {
+    _getPathForKeyInJson(targetJson: any, keyToFind: string): Array<string> {
+        if (typeof targetJson === 'object') {
+            return jsonQ(targetJson).find(keyToFind).path();
+        } else {
+            throw new TypeError('Incompatible type for targetJson : it must be an array or an object');
+        }
+    }
+
+    /**
+     * [_getPathValueForKeyFromJson find elements from targetJson using json pathToFind]
+     * @param  {any}      targetJson [source json from which you want to get data ]
+     * @param  {Array<string>} pathToFind [ path array which contains all key to reach a particular value in JSON ]
+     * @return {[any]}              [ returned elements which matched the path ]
+     */
+    _getPathValueForKeyFromJson(targetJson: any, pathToFind: Array<string>) {
         if (typeof targetJson === 'object') {
             return jsonQ.pathValue(targetJson, pathToFind);
         } else {
@@ -240,13 +274,13 @@ export class JSONUtilityService {
     }
 
     /**
-     * [_setPathValueInJson set value into a targetJson using pathToFind ]
+     * [_setPathValueForKeyInJson set value into a targetJson using pathToFind ]
      * @param  {any}      targetJson [source json from which you want to get data]
-     * @param  {string[]} pathToFind [path array which contains all key to reach a particular value in JSON]
+     * @param  {Array<string>} pathToFind [path array which contains all key to reach a particular value in JSON]
      * @param  {any}      valueToSet [value you want to set to targetJson]
-     * @return {[type]}              [returns value if set ]
+     * @return {[type]}              [returns json if set ]
      */
-    _setPathValueInJson(targetJson: any, pathToFind: string[], valueToSet: any) {
+    _setPathValueForKeyInJson(targetJson: any, pathToFind: Array<string>, valueToSet: any) {
         if (typeof targetJson === 'object') {
             return jsonQ.setPathValue(targetJson, pathToFind, valueToSet);
         } else {
@@ -273,28 +307,96 @@ export class JSONUtilityService {
      **************************************************************************************************/
 
     /**
-     * [_getValueFromJson get all the values from json matching a key ]
-     * @param targetJson             [ source json from which you want to get data ]
-     * @param {string} keyToFind     [ actual key whose value to find ]
+     * [_getValueFromJsonqobj get all the values from jsonq object ]
+     * @param {any} jsonqObj             [ jsonq object ]
      * @return {[array]}              [ returns array of values if available ]
      */
-    _getValueFromJson(targetJson: any, keyToFind: string) {
-      if (typeof targetJson === 'object') {
-          return jsonQ(targetJson).find(keyToFind).value();
+    _getValueFromJsonqobj(jsonqObj: any) {
+      if (typeof jsonqObj === 'object') {
+          try {
+              return jsonQ(jsonqObj).value();
+          } catch (err) {
+              throw new TypeError('Incompatible type for jsonqObj : it must be an jsonQ type object');
+          }
       } else {
           throw new TypeError('Incompatible type for targetJson : it must be an array or an object');
       }
     }
 
     /**
-     * [_getPathForKeyInJson get path from json matching a key ]
-     * @param targetJson             [ source json from which you want to find path ]
-     * @param {string} keyToFind     [ actual key whose path to find ]
-     * @return {[array]}              [ returns array defining the path of key ]
+     * [_getPathForKeyInJsonqObject get path from json matching a key ]
+     * @param {any} jsonqObject             [ it must be an jsonQ type object ]
+     * @return {[Array<string>]}              [ returns array containing strings having the path of key ]
      */
-    _getPathForKeyInJson(targetJson: any, keyToFind: string) {
-        if (typeof targetJson === 'object') {
-            return jsonQ(targetJson).find(keyToFind).path();
+    _getPathForKeyInJsonqObject(jsonqObject: any): Array<string> {
+        if (typeof jsonqObject === 'object') {
+            try {
+                return jsonqObject.path();
+            } catch (err) {
+                throw new TypeError('Incompatible type for jsonqObj : it must be an jsonQ type object');
+            }
+        } else {
+            throw new TypeError('Incompatible type for targetJson : it must be an array or an object');
+        }
+    }
+
+    /**
+     * [_getIndexForKeyInJson get path from json matching a key ]
+     * @param {any} josnqObj             [ it must be an jsonQ type object ]
+     * @param {any} qualifier     [ to filter result pass a function or a part of object to search for index ]
+     * @return {[number]}              [ returns index if value found, if not returns -1 ]
+     */
+    _getIndexForKeyInJson(josnqObj: any, qualifier: any): number {
+        if (typeof josnqObj === 'object') {
+            if (typeof qualifier === 'function' || typeof qualifier === 'object') {
+                try {
+                    return josnqObj.index(qualifier);
+                } catch (err) {
+                    throw new TypeError('Incompatible type for jsonqObj : it must be an jsonQ type object');
+                }
+            } else {
+                throw new TypeError('Incompatible type for keyTofind : it must be an array or an object or an function');
+            }
+        } else {
+            throw new TypeError('Incompatible type for targetJson : it must be an array or an object');
+        }
+    }
+
+    /**
+     * [_getPathValueFromJsonqObject get value from json matching a path ]
+     * @param {any} josnqObj             [ it must be an jsonQ type object ]
+     * @param {Array<string>} path     [ array containing path strings which is a path of key in json ]
+     * @return {[any]}              [ returns value at path specified ]
+     */
+    _getPathValueFromJsonqObject(josnqObj: any, path: Array<string>): any {
+        if (typeof josnqObj === 'object') {
+            try {
+                return josnqObj.pathValue(path);
+            } catch (err) {
+                throw new TypeError('Incompatible type for jsonqObj : it must be an jsonQ type object');
+            }
+        } else {
+            throw new TypeError('Incompatible type for targetJson : it must be an array or an object');
+        }
+    }
+
+    /**
+     * [_getNthValueInJson get value from json at nth index ]
+     * @param {any} josnqObj             [ it must be an jsonQ type object ]
+     * @param {number} index     [ index of array  ]
+     * @return {[any]}              [ returns value at path specified ]
+     */
+    _getNthValueInJson(josnqObj: any, index: number): any {
+        if (typeof josnqObj === 'object') {
+            if (index >= 0) {
+                try {
+                    return josnqObj.nthElm(index);
+                } catch (err) {
+                    throw new TypeError('Incompatible type for jsonqObj : it must be an jsonQ type object');
+                }
+            } else {
+                throw new TypeError('index must be a positive number');
+            }
         } else {
             throw new TypeError('Incompatible type for targetJson : it must be an array or an object');
         }
@@ -302,7 +404,7 @@ export class JSONUtilityService {
 
     /**
      * [_getUniqueElements get unique elements from json matching a key ]
-     * @param targetJson             [ source json from which you want to find value ]
+     * @param {any} targetJson             [ source json from which you want to find value ]
      * @param {string} keyToFind     [ actual key whose value to find ]
      * @return {[array]}              [ returns an array of unique values. ]
      */
@@ -311,6 +413,281 @@ export class JSONUtilityService {
             return jsonQ(targetJson).find(keyToFind).unique();
         } else {
             throw new TypeError('Incompatible type for targetJson : it must be an array or an object');
+        }
+    }
+
+    /**************************************************************************************************
+     * Basic traverse and filter functions used with JSON
+     **************************************************************************************************/
+
+    /* tslint:disable */
+    /**
+     * [_findAllValuesInJson find all values from json matching a key ]
+     * @param {any} targetJson             [ source json from which you want to find values ]
+     * @param {string} keyToFind     [ actual key whose value to find ]
+     * @param {any} qualifier     [ by default value is null, if null find all all values without filter, to filter result pass a function or a part of object to search ]
+     * @param {boolean} outputValues     [ default is false, if false actual values array will be returned or if true returns jsonq object for further processing ]
+     * @return {[any]}              [ return value depends on 'outputValues' flag if 'outputValues' true actual values array will be returned or if 'outputValues' false returns jsonq object for further processing ]
+     */
+    /* tslint:enable */
+    _findAllValuesInJson(targetJson: any, keyToFind: string, qualifier: any = null, outputValues = false): any {
+        if (typeof targetJson === 'object') {
+            if (qualifier !== null) {
+                if (typeof qualifier === 'function' || typeof qualifier === 'object') {
+                    if (outputValues) {
+                        return jsonQ(targetJson).find(keyToFind, qualifier).value();
+                    }
+                    return jsonQ(targetJson).find(keyToFind, qualifier);
+                } else {
+                    throw new TypeError('Incompatible type for keyTofind : it must be an array or an object or an function');
+                }
+            } else {
+                if (outputValues) {
+                    return jsonQ(targetJson).find(keyToFind).value();
+                }
+                return jsonQ(targetJson).find(keyToFind);
+            }
+        } else {
+            throw new TypeError('Incompatible type for targetJson : it must be an array or an object');
+        }
+    }
+
+    /* tslint:disable */
+    /**
+     * [_findSiblingsInJson find all values of sibling key from json ]
+     * @param {any} jsonqObj             [ it must be an jsonQ type object ]
+     * @param {string} keyToFind     [ actual sibling key whose value to find ]
+     * @param {boolean} outputValues     [ default is false, if false actual values array will be returned or if true returns jsonq object for further processing ]
+     * @return {[any]}              [ return value depends on 'outputValues' flag if 'outputValues' true actual values array will be returned or if 'outputValues' false returns jsonq object for further processing ]
+     */
+    /* tslint:enable */
+    _findSiblingsInJson(jsonqObj: any, keyToFind: string, outputValues = false): any {
+        if (typeof jsonqObj === 'object') {
+            try {
+                if (outputValues) {
+                    return jsonqObj.sibling(keyToFind).value();
+                }
+                return jsonqObj.sibling(keyToFind);
+            } catch (err) {
+                throw new TypeError('Incompatible type for jsonqObj : it must be an jsonQ type object');
+            }
+        } else {
+            throw new TypeError('Incompatible type for jsonqObj : it must be an array or an object');
+        }
+    }
+
+    /* tslint:disable */
+    /**
+     * [_findParentsInJson find all parents values from json matching a key ]
+     * @param {any} jsonqObj             [ it must be an jsonQ type object ]
+     * @param {string} keyToFind     [ actual sibling key whose value to find ]
+     * @param {boolean} outputValues     [ default is false, if false actual values array will be returned or if true returns jsonq object for further processing ]
+     * @return {[any]}              [ return value depends on 'outputValues' flag if 'outputValues' true actual values array will be returned or if 'outputValues' false returns jsonq object for further processing ]
+     */
+    /* tslint:enable */
+    _findParentsInJson(jsonqObj: any, keyToFind: string, outputValues = false): any {
+        if (typeof jsonqObj === 'object') {
+            try {
+                if (outputValues) {
+                    return jsonqObj.parent(keyToFind).value();
+                }
+                return jsonqObj.parent(keyToFind);
+            } catch (err) {
+                throw new TypeError('Incompatible type for jsonqObj : it must be an jsonQ type object');
+            }
+        } else {
+            throw new TypeError('Incompatible type for jsonqObj : it must be an array or an object');
+        }
+    }
+
+    /* tslint:disable */
+    /**
+     * [_findClosestKeyInJson find the closest key values going upward in json ]
+     * @param {any} jsonqObj             [ it must be an jsonQ type object ]
+     * @param {string} keyToFind     [ actual closest key whose value to find ]
+     * @param {boolean} outputValues     [ default is false, if false actual values array will be returned or if true returns jsonq object for further processing ]
+     * @return {[any]}              [ return value depends on 'outputValues' flag if 'outputValues' true actual values array will be returned or if 'outputValues' false returns jsonq object for further processing ]
+     */
+    /* tslint:enable */
+    _findClosestKeyInJson(jsonqObj: any, keyToFind: string, outputValues = false): any {
+        if (typeof jsonqObj === 'object') {
+            try {
+                if (outputValues) {
+                    return jsonqObj.closest(keyToFind).value();
+                }
+                return jsonqObj.closest(keyToFind);
+            } catch (err) {
+                throw new TypeError('Incompatible type for jsonqObj : it must be an jsonQ type object');
+            }
+        } else {
+            throw new TypeError('Incompatible type for jsonqObj : it must be an array or an object');
+        }
+    }
+
+    /* tslint:disable */
+    /**
+     * [_getFilteredListFromJson filter the jsonq object using qualifier filter ]
+     * @param {any} jsonqObj             [ it must be an jsonQ type object ]
+     * @param {any} qualifier     [ custom functional logic to search json in targetJson or an json object or json array  ]
+     * @param {boolean} outputValues     [ default is false, if false actual values array will be returned or if true returns jsonq object for further processing ]
+     * @return {[any]}              [ return filtered value depends on 'outputValues' flag if 'outputValues' true actual values array will be returned or if 'outputValues' false returns jsonq object for further processing ]
+     */
+    /* tslint:enable */
+    _getFilteredListFromJson(jsonqObj: any, qualifier: any, outputValues = false): any {
+        if ( typeof jsonqObj === 'object') {
+            if (typeof qualifier === 'function' || typeof qualifier === 'object') {
+                try {
+                    if (outputValues) {
+                        return jsonqObj.filter(qualifier).value();
+                    }
+                    return jsonqObj.filter(qualifier);
+                } catch (err) {
+                    throw new TypeError('Incompatible type for jsonqObj : it must be an jsonQ type object');
+                }
+            } else {
+                throw new TypeError('Incompatible type for qualifier : it must be an array or an object or a function');
+            }
+        } else {
+            throw new TypeError('Incompatible type for jsonqObj : it must be an array or an object');
+        }
+    }
+
+    /**************************************************************************************************
+     * Basic json data manipulation functions used with JSON
+     **************************************************************************************************/
+
+    /**
+     * [_setValueToJson set value into json against a key ]
+     * @param {any} jsonqObj             [ it must be an jsonQ type object ]
+     * @param {any} valToSet     [ value to set in json against a key (can be a valid json type) ]
+     * @return {[void]}              [ void ]
+     */
+    _setValueToJson(jsonqObj: any, valToSet: any): void {
+        if ( typeof jsonqObj === 'object') {
+                try {
+                    return jsonqObj.value(valToSet);
+                } catch (err) {
+                    throw new TypeError('Incompatible type for jsonqObj : it must be an jsonQ type object');
+                }
+        } else {
+            throw new TypeError('Incompatible type for jsonqObj : it must be an array or an object');
+        }
+    }
+
+    /**
+     * [_appendValueToJson append value into json against a key ]
+     * @param {any} jsonqObj             [ it must be an jsonQ type object ]
+     * @param {any} valToSet     [ value to append in json against a key (can be a valid json type) ]
+     * @return {[void]}              [ void ]
+     */
+    _appendValueToJson(jsonqObj: any, valToSet: any): void {
+        if ( typeof jsonqObj === 'object') {
+            try {
+                return jsonqObj.append(valToSet);
+            } catch (err) {
+                throw new TypeError('Incompatible type for jsonqObj : it must be an jsonQ type object');
+            }
+        } else {
+            throw new TypeError('Incompatible type for jsonqObj : it must be an array or an object');
+        }
+    }
+
+    /**
+     * [_prependValueToJson prepend value into json against a key ]
+     * @param {any} jsonqObj             [ it must be an jsonQ type object ]
+     * @param {any} valToSet     [ value to prepend in json against a key (can be a valid json type) ]
+     * @return {[void]}              [ void ]
+     */
+    _prependValueToJson(jsonqObj: any, valToSet: any): void {
+        if ( typeof jsonqObj === 'object') {
+            try {
+                return jsonqObj.prepend(valToSet);
+            } catch (err) {
+                throw new TypeError('Incompatible type for jsonqObj : it must be an jsonQ type object');
+            }
+        } else {
+            throw new TypeError('Incompatible type for jsonqObj : it must be an array or an object');
+        }
+    }
+
+    /**
+     * [_appendValueAtIndexToJson append value at index into json against a key ]
+     * @param {any} jsonqObj             [ it must be an jsonQ type object ]
+     * @param {any} valToSet     [ value to append in json against a key (can be a valid json type) ]
+     * @param {any} index     [ index at which you want to append value ]
+     * @return {[void]}              [ void ]
+     */
+    _appendValueAtIndexToJson(jsonqObj: any, valToSet: any, index: number): void {
+        if ( typeof jsonqObj === 'object') {
+            if (index >= 0) {
+                try {
+                    return jsonqObj.appendAt(index, valToSet);
+                } catch (err) {
+                    throw new TypeError('Incompatible type for jsonqObj : it must be an jsonQ type object');
+                }
+            } else {
+                throw new TypeError('index must be a positive number');
+            }
+        } else {
+            throw new TypeError('Incompatible type for jsonqObj : it must be an jsonQ type object');
+        }
+    }
+
+    /**
+     * [_setPathValueToJsonqObject set value at path into json against a key ]
+     * @param {any} jsonqObj             [ it must be an jsonQ type object ]
+     * @param {any} valToSet     [ value to set in json against a path of key (can be a valid json type) ]
+     * @param {Array<string>} path     [ path array which contains all key to reach a particular value in JSON ]
+     * @return {[void]}              [ void ]
+     */
+    _setPathValueToJsonqObject(jsonqObj: any, valToSet: any, path: Array<string>): void {
+        if ( typeof jsonqObj === 'object') {
+            try {
+                return jsonqObj.setPathValue(path, valToSet);
+            } catch (err) {
+                throw new TypeError('Incompatible type for jsonqObj : it must be an jsonQ type object');
+            }
+        } else {
+            throw new TypeError('Incompatible type for jsonqObj : it must be an jsonQ type object');
+        }
+    }
+
+    /**
+     * [_loopJsonqObject loop through jsonq object finding key, value and path of json ]
+     * @param {any} jsonqObj             [ it must be an jsonQ type object ]
+     * @param {[Function]} callback             [ callback function containing key, value, path  ]
+     * @return {[void]}              [ void ]
+     */
+    _loopJsonqObject(jsonqObj: any, callback): void {
+        if ( typeof jsonqObj === 'object') {
+            if (callback && typeof callback === 'function') {
+                try {
+                    return jsonqObj.each(callback);
+                } catch (err) {
+                    throw new TypeError('Incompatible type for jsonqObj : it must be an jsonQ type object');
+                }
+            } else {
+                throw new TypeError('Incompatible type for callback: it must be a callback function');
+            }
+        } else {
+            throw new TypeError('Incompatible type for jsonqObj : it must be an jsonQ type object');
+        }
+    }
+
+    /**
+     * [_refreshJsonqObject After any manipulation on jsonQ object you must call refresh method. ]
+     * @param {any} jsonqObj             [ it must be an jsonQ type object ]
+     * @return {[void]}              [ void ]
+     */
+    _refreshJsonqObject(jsonqObj: any): void {
+        if ( typeof jsonqObj === 'object') {
+            try {
+                jsonqObj.refresh();
+            } catch (err) {
+                throw new TypeError('Incompatible type for jsonqObj : it must be an jsonQ type object');
+            }
+        } else {
+            throw new TypeError('Incompatible type for jsonqObj : it must be an jsonQ type object');
         }
     }
 }
