@@ -4,6 +4,8 @@ import { SampleComponent } from './sample.component';
 import { SampleDirective } from './sample.directive';
 import { SamplePipe } from './sample.pipe';
 import { JSONUtilityService } from './json-utility.service';
+import {JSONCommons} from './json-operations.service';
+import {CommonOps} from './common-operations.service';
 
 export * from './sample.component';
 export * from './sample.directive';
@@ -25,7 +27,9 @@ export * from './json-utility.service';
     SamplePipe
   ],
   providers: [
-    JSONUtilityService
+    JSONUtilityService,
+      JSONCommons,
+      CommonOps
   ]
 
 })

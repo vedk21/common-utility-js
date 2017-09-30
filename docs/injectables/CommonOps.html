@@ -113,7 +113,7 @@
                                 id="xs-injectables-links"
                             >
                                 <li class="link">
-                                    <a href="../injectables/CommonOps.html" >CommonOps</a>
+                                    <a href="../injectables/CommonOps.html"  data-type="entity-link" class="active" >CommonOps</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/JSONCommons.html" >JSONCommons</a>
@@ -122,10 +122,10 @@
                                     <a href="../injectables/JSONUtilityService.html" >JSONUtilityService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../injectables/SamplePipe.html"  data-type="entity-link" class="active" >SamplePipe</a>
+                                    <a href="../injectables/SamplePipe.html" >SamplePipe</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../injectables/SamplePipe.html"  data-type="entity-link" class="active" >SamplePipe</a>
+                                    <a href="../injectables/SamplePipe.html" >SamplePipe</a>
                                 </li>
                         </ul>
                     </li>
@@ -258,7 +258,7 @@
                                        id="injectables-links"
                    >
                                        <li class="link">
-                                           <a href="../injectables/CommonOps.html" >CommonOps</a>
+                                           <a href="../injectables/CommonOps.html"  data-type="entity-link" class="active" >CommonOps</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/JSONCommons.html" >JSONCommons</a>
@@ -267,10 +267,10 @@
                                            <a href="../injectables/JSONUtilityService.html" >JSONUtilityService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../injectables/SamplePipe.html"  data-type="entity-link" class="active" >SamplePipe</a>
+                                           <a href="../injectables/SamplePipe.html" >SamplePipe</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../injectables/SamplePipe.html"  data-type="entity-link" class="active" >SamplePipe</a>
+                                           <a href="../injectables/SamplePipe.html" >SamplePipe</a>
                                        </li>
                                </ul>
                            </li>
@@ -314,7 +314,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li>SamplePipe</li>
+  <li>CommonOps</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -334,18 +334,32 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/sample.pipe.ts</code>
+            <code>src/common-operations.service.ts</code>
         </p>
 
-            <p class="comment">
-                <h3>Description</h3>
-            </p>
-            <p class="comment">
-                <p>Transforms any input value</p>
-
-            </p>
 
 
+            <section>
+                <h3 id="index">Index</h3>
+                <table class="table table-sm table-bordered index-table">
+                    <tbody>
+                        <tr>
+                            <td class="col-md-4">
+                                <h6><b>Methods</b></h6>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <ul class="index-list">
+                                    <li>
+                                         <a href="#_checkIfValidIdentifier">_checkIfValidIdentifier</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
 
             <section>
                 <h3 id="constructor">Constructor</h3>
@@ -353,32 +367,116 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>Object()</code>
+                                    <code>constructor()</code>
                                 </td>
                             </tr>
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="4" class="link-to-prism">src/common-operations.service.ts:4</a></div>
+                                        </td>
+                                    </tr>
             
                         </tbody>
                     </table>
             </section>
 
+            <section>
+                
+                    <h3 id="methods">
+                        Methods
+                    </h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="_checkIfValidIdentifier"></a>
+                                    <b> _checkIfValidIdentifier</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>_checkIfValidIdentifier(identifier: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/common-operations.service.ts:18</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>[_checkIfValidIdentifier check if identifier is having valid value ]</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>identifier</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ identifier whose value to validate ]</p>
+            </td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                <p>[ returns true if identifier is valid else returns false ]</p>
+            
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
 
     </div>
 
 
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre class="line-numbers"><code class="language-typescript">import { Injectable, PipeTransform, Pipe } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 
-/**
- * Transforms any input value
- */
-@Pipe({
-  name: &#x27;samplePipe&#x27;
-})
 @Injectable()
-export class SamplePipe implements PipeTransform {
-  transform(value: any, args: any[] &#x3D; null): string {
-    return value;
-  }
+export class CommonOps {
+
+    constructor() {
+    }
+
+    /**************************************************************************************************
+     * Common JS operations
+     **************************************************************************************************/
+
+    /**
+     * [_checkIfValidIdentifier check if identifier is having valid value ]
+     * @param  {any}  identifier [ identifier whose value to validate ]
+     * @returns {[boolean]}              [ returns true if identifier is valid else returns false ]
+     */
+    _checkIfValidIdentifier(identifier: any): boolean {
+        if (identifier !&#x3D;&#x3D; undefined &amp;&amp; identifier !&#x3D;&#x3D; &#x27;undefined&#x27; &amp;&amp; identifier !&#x3D;&#x3D; null
+            &amp;&amp; identifier !&#x3D;&#x3D; &#x27;NULL&#x27; &amp;&amp; identifier !&#x3D;&#x3D; &#x27;null&#x27;) {
+            return true;
+        }
+        return false;
+    }
 }
 </code></pre>
     </div>

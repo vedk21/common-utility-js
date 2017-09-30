@@ -116,16 +116,16 @@
                                     <a href="../injectables/CommonOps.html" >CommonOps</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../injectables/JSONCommons.html" >JSONCommons</a>
+                                    <a href="../injectables/JSONCommons.html"  data-type="entity-link" class="active" >JSONCommons</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/JSONUtilityService.html" >JSONUtilityService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../injectables/SamplePipe.html"  data-type="entity-link" class="active" >SamplePipe</a>
+                                    <a href="../injectables/SamplePipe.html" >SamplePipe</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../injectables/SamplePipe.html"  data-type="entity-link" class="active" >SamplePipe</a>
+                                    <a href="../injectables/SamplePipe.html" >SamplePipe</a>
                                 </li>
                         </ul>
                     </li>
@@ -261,16 +261,16 @@
                                            <a href="../injectables/CommonOps.html" >CommonOps</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../injectables/JSONCommons.html" >JSONCommons</a>
+                                           <a href="../injectables/JSONCommons.html"  data-type="entity-link" class="active" >JSONCommons</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/JSONUtilityService.html" >JSONUtilityService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../injectables/SamplePipe.html"  data-type="entity-link" class="active" >SamplePipe</a>
+                                           <a href="../injectables/SamplePipe.html" >SamplePipe</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../injectables/SamplePipe.html"  data-type="entity-link" class="active" >SamplePipe</a>
+                                           <a href="../injectables/SamplePipe.html" >SamplePipe</a>
                                        </li>
                                </ul>
                            </li>
@@ -314,7 +314,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li>SamplePipe</li>
+  <li>JSONCommons</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -334,18 +334,35 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/sample.pipe.ts</code>
+            <code>src/json-operations.service.ts</code>
         </p>
 
-            <p class="comment">
-                <h3>Description</h3>
-            </p>
-            <p class="comment">
-                <p>Transforms any input value</p>
-
-            </p>
 
 
+            <section>
+                <h3 id="index">Index</h3>
+                <table class="table table-sm table-bordered index-table">
+                    <tbody>
+                        <tr>
+                            <td class="col-md-4">
+                                <h6><b>Methods</b></h6>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <ul class="index-list">
+                                    <li>
+                                         <a href="#_findAllJSONObjects">_findAllJSONObjects</a>
+                                    </li>
+                                    <li>
+                                         <a href="#_findJSONObject">_findJSONObject</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
 
             <section>
                 <h3 id="constructor">Constructor</h3>
@@ -353,32 +370,259 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>Object()</code>
+                                    <code>constructor(jsonFilter: <a href="../injectables/JSONUtilityService.html">JSONUtilityService</a>, commonOps: <a href="../injectables/CommonOps.html">CommonOps</a>)</code>
                                 </td>
                             </tr>
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">src/json-operations.service.ts:6</a></div>
+                                        </td>
+                                    </tr>
             
                         </tbody>
                     </table>
             </section>
 
+            <section>
+                
+                    <h3 id="methods">
+                        Methods
+                    </h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="_findAllJSONObjects"></a>
+                                    <b> _findAllJSONObjects</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>_findAllJSONObjects(jsonArray: Array<object>, keyToSearch: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, valToSearch: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/json-operations.service.ts:52</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>[_findAllJSONObjects find all JSON objects from an Array using key and value ]</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>jsonArray</td>
+                                                              <td>
+                                                                      <code>Array</code>
+                                                              </td>
+                                                              <td><p>[ json containning objects to find from ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>keyToSearch</td>
+                                                              <td>
+                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                              </td>
+                                                              <td><p>[ key to search in json array ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>valToSearch</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ value to search against in json array ]</p>
+            </td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                <p>[ returns found objects array or null if not found ]</p>
+            
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="_findJSONObject"></a>
+                                    <b> _findJSONObject</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>_findJSONObject(jsonArray: Array<object>, keyToSearch: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, valToSearch: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/json-operations.service.ts:22</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>[_findJSONObject find unique JSON object from an Array using key and value ]</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>jsonArray</td>
+                                                              <td>
+                                                                      <code>Array</code>
+                                                              </td>
+                                                              <td><p>[ json containning objects to find from ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>keyToSearch</td>
+                                                              <td>
+                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                              </td>
+                                                              <td><p>[ key to search in json array ]</p>
+            </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>valToSearch</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td><p>[ value to search against in json array ]</p>
+            </td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                <p>[ returns found object or null if not found ]</p>
+            
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
 
     </div>
 
 
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre class="line-numbers"><code class="language-typescript">import { Injectable, PipeTransform, Pipe } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import {JSONUtilityService} from &#x27;./json-utility.service&#x27;;
+import {CommonOps} from &#x27;common-operations.service&#x27;;
 
-/**
- * Transforms any input value
- */
-@Pipe({
-  name: &#x27;samplePipe&#x27;
-})
 @Injectable()
-export class SamplePipe implements PipeTransform {
-  transform(value: any, args: any[] &#x3D; null): string {
-    return value;
-  }
+export class JSONCommons {
+
+    constructor(private jsonFilter: JSONUtilityService, private commonOps: CommonOps) {
+    }
+
+    /**************************************************************************************************
+     * Common JSON operations JSON Arrays
+     **************************************************************************************************/
+
+    /**
+     * [_findJSONObject find unique JSON object from an Array using key and value ]
+     * @param  {Array&lt;object&gt;}  jsonArray [ json containning objects to find from ]
+     * @param  {string}  keyToSearch [ key to search in json array ]
+     * @param  {any}  valToSearch [ value to search against in json array ]
+     * @returns {[any]}              [ returns found object or null if not found ]
+     */
+    _findJSONObject(jsonArray: Array&lt;object&gt;, keyToSearch: string, valToSearch: any): any {
+        // prepare jsonQ object
+        let jsonqObject &#x3D; this.jsonFilter._getJsonqObject(jsonArray);
+        if (this.commonOps._checkIfValidIdentifier(valToSearch)) {
+            // get &#x27;this&#x27; context in self
+            let self &#x3D; this;
+            let foundObjectList &#x3D; this.jsonFilter._findAllValuesInJson(jsonqObject, keyToSearch, function () {
+                // return if valToSearch is found
+                return self.jsonFilter._checkIfJsonsAreIdentical(this, valToSearch);
+            });
+            // filter the first element
+            let filteredList &#x3D; this.jsonFilter._getFilteredListFromJson(foundObjectList, &#x27;first&#x27;, true);
+            // check if array is not empty
+            if (this.commonOps._checkIfValidIdentifier(filteredList) &amp;&amp; filteredList.length &gt; 0) {
+                return filteredList[0];
+            } else {
+                return null;
+            }
+        } else {
+            throw new ReferenceError(&#x27;valToSearch does not exist, may be undefined or null&#x27;);
+        }
+    }
+
+    /**
+     * [_findAllJSONObjects find all JSON objects from an Array using key and value ]
+     * @param  {Array&lt;object&gt;}  jsonArray [ json containning objects to find from ]
+     * @param  {string}  keyToSearch [ key to search in json array ]
+     * @param  {any}  valToSearch [ value to search against in json array ]
+     * @returns {[any]}              [ returns found objects array or null if not found ]
+     */
+    _findAllJSONObjects(jsonArray: Array&lt;object&gt;, keyToSearch: string, valToSearch: any): any {
+        // prepare jsonQ object
+        let jsonqObject &#x3D; this.jsonFilter._getJsonqObject(jsonArray);
+        if (this.commonOps._checkIfValidIdentifier(valToSearch)) {
+            // get &#x27;this&#x27; context in self
+            let self &#x3D; this;
+            let foundObjectList &#x3D; this.jsonFilter._findAllValuesInJson(jsonqObject, keyToSearch, function () {
+                // return if valToSearch is found
+                return self.jsonFilter._checkIfJsonsAreIdentical(this, valToSearch);
+            });
+            // filter the first element
+            let filteredList &#x3D; this.jsonFilter._getFilteredListFromJson(foundObjectList, &#x27;first&#x27;, true);
+            // check if array is not empty
+            if (this.commonOps._checkIfValidIdentifier(filteredList) &amp;&amp; filteredList.length &gt; 0) {
+                return filteredList;
+            } else {
+                return null;
+            }
+        } else {
+            throw new ReferenceError(&#x27;valToSearch does not exist, may be undefined or null&#x27;);
+        }
+    }
 }
 </code></pre>
     </div>

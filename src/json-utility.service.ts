@@ -11,9 +11,14 @@ export class JSONUtilityService {
     constructor() { }
 
     /**************************************************************************************************
-     * Initialize jsonq object using json object or array
+     * Initialize jsonQ object using json object or array
      **************************************************************************************************/
 
+    /**
+     * [_getJsonqObject create a jsonQ object from valid JSON ]
+     * @param  {any}      targetJson [ json object or array (valid json)]
+     * @returns {[any]}            [jsonQ object representing targetjson you passed to it]
+     */
     _getJsonqObject(targetJson: any): any {
         if (targetJson === 'object') {
             return jsonQ(targetJson);
@@ -59,7 +64,7 @@ export class JSONUtilityService {
      * [_mergeJsonsIntoTarget merge jsons into targetJson ]
      * @param  {any}        targetJson [ target json (all json data merged into this json)]
      * @param  {Array<any>} jsonArray  [ source json array ]
-     * @return {[type]}                [description]
+     * @returns {[type]}                [description]
      */
     _mergeJsonsIntoTarget(targetJson: any, jsonArray: Array<any>) {
         let clone_json = this._cloneJson(jsonArray);
@@ -76,7 +81,7 @@ export class JSONUtilityService {
      * [_mergeJsons merge jsons into new json]
      * @param  {any}        json [ source json ]
      * @param  {Array<any>} jsonArray  [ json array to merged ]
-     * @return {[object]}                [ new merged json ]
+     * @returns {[object]}                [ new merged json ]
      */
     _mergeJsons(json: any, jsonArray: Array<any>) {
         let clone_json = this._cloneJson(jsonArray);
@@ -99,7 +104,7 @@ export class JSONUtilityService {
      * @param  {any}     targetJson   [ json to be searched in ]
      * @param  {any}     jsonToSearch [ json object or an array to be searched in targetJson ]
      * @param  {boolean} qualifierFlag    [ tells weather second jsonToSearch is qualifier or not, jsonToSearch can be direct object for which we want to find index or it can be a qualifier(part of object) ]
-     * @return {[number]}               [ index of found json object or an array or -1 is returned if not found ]
+     * @returns {[number]}               [ index of found json object or an array or -1 is returned if not found ]
      */
     /* tslint:enable */
     _findIndexOfJson(targetJson: any, jsonToSearch: any, qualifierFlag: boolean) {
@@ -114,7 +119,7 @@ export class JSONUtilityService {
      * [_findIndexOfJson find index of json into targetJson using search as a custom function ]
      * @param  {any}     targetJson   [ json to be searched in ]
      * @param  {any}     qualifier [ custom functional logic to search json in targetJson or an json object or json array ]
-     * @return {[number]}               [ index of found json object or an array or -1 is returned if not found ]
+     * @returns {[number]}               [ index of found json object or an array or -1 is returned if not found ]
      */
     _findIndexOfJsonUsingCustomQualifier(targetJson: any, qualifier) {
         if (typeof targetJson === 'object') {
@@ -131,7 +136,7 @@ export class JSONUtilityService {
     /**
      * [_cloneJson clone the json into new json object or array]
      * @param  {any}    sourceJson [source json to clone]
-     * @return {[any]}            [new cloned json]
+     * @returns {[any]}            [new cloned json]
      */
     _cloneJson(sourceJson: any) {
         return jsonQ.clone(sourceJson);
@@ -143,7 +148,7 @@ export class JSONUtilityService {
      * @param  {any}     targetJson   [json to be searched in]
      * @param  {any}     jsonToSearch [json object or an array to be searched in targetJson]
      * @param  {boolean} qualifier    [tells weather second param jsonToSearch is qualifier or not, jsonToSearch can be direct object for which we want to find index or it can be a qualifier(part of object)]
-     * @return {[boolean]}               [ returns true if json is present in targetJson ]
+     * @returns {[boolean]}               [ returns true if json is present in targetJson ]
      */
     /* tslint:enable */
     _findIfJsonIsPresent(targetJson: any, jsonToSearch: any, qualifier: boolean) {
@@ -159,7 +164,7 @@ export class JSONUtilityService {
      * [_findIfJsonIsPresentUsingCustomQualifier find the json object or an array is present in targetJson or not using custom functional qualifier ]
      * @param  {any}    targetJson       [ json to be searched in ]
      * @param  {[type]} qualifier [ custom functional logic to search json in targetJson or an json object or json array  ]
-     * @return {[boolean]}                  [ returns true if json is present in targetJson ]
+     * @returns {[boolean]}                  [ returns true if json is present in targetJson ]
      */
     /* tslint:enable */
     _findIfJsonIsPresentUsingCustomQualifier(targetJson: any, qualifier) {
@@ -178,7 +183,7 @@ export class JSONUtilityService {
      * [_findNthElementInJson find the element from targetJson at nth index ]
      * @param  {any}    targetJson [ json to be searched in ]
      * @param  {any} pattern      [ json index to be searched or pattern (2n*n) to be search in ]
-     * @return {[any]}            [ searched element from targetJson ]
+     * @returns {[any]}            [ searched element from targetJson ]
      */
     _findNthElementInJson(targetJson: any, pattern: any) {
         if (typeof targetJson === 'object') {
@@ -196,7 +201,7 @@ export class JSONUtilityService {
      * [_checkIfJsonsAreIdentical check if two jsons are identical or not]
      * @param  {any}    jsonA [first json to be checked]
      * @param  {any}    jsonB [second json to be checked]
-     * @return {[boolean]}       [returns true if found identical]
+     * @returns {[boolean]}       [returns true if found identical]
      */
     _checkIfJsonsAreIdentical(jsonA: any, jsonB: any): boolean {
         if (typeof jsonA === 'object' && typeof jsonB === 'object') {
@@ -209,7 +214,7 @@ export class JSONUtilityService {
     /**
      * [_getUnionOfJsons get the union of jsons ]
      * @param  {any[]}  arrayOfJsons [ source jsons for union operation ]
-     * @return {[any[]]}              [ json returned after union operation ]
+     * @returns {[any]}              [ json returned after union operation ]
      */
     _getUnionOfJsons(arrayOfJsons: any[]) {
         if (arrayOfJsons instanceof Array) {
@@ -222,7 +227,7 @@ export class JSONUtilityService {
     /**
      * [_findCommonElementsFromJsons find the common elements from json objects and arrays]
      * @param  {any[]}  arrayOfJsons [ source jsons for intersection operation ]
-     * @return {[any[]]}              [ returns common elements from jsons ]
+     * @returns {[any[]]}              [ returns common elements from jsons ]
      */
     _findCommonElementsFromJsons(arrayOfJsons: any[]) {
         if (arrayOfJsons instanceof Array) {
@@ -235,7 +240,7 @@ export class JSONUtilityService {
     /**
      * [_getAllUniqueElementsFromJson get unique elements from targetJson ]
      * @param  {any[]}  targetJson [ source json to find unique elements ]
-     * @return {[any[]]}            [ array of all unique elements ]
+     * @returns {[any[]]}            [ array of all unique elements ]
      */
     _getAllUniqueElementsFromJson(targetJson: any[]) {
         if (targetJson instanceof Array) {
@@ -249,7 +254,7 @@ export class JSONUtilityService {
      * [_getPathForKeyInJson get path from json matching a key ]
      * @param {any} targetJson             [ source json from which you want to find path ]
      * @param {string} keyToFind     [ actual key whose path to find ]
-     * @return {[Array<string>]}              [ returns array containing strings having the path of key ]
+     * @returns {[Array<string>]}              [ returns array containing strings having the path of key ]
      */
     _getPathForKeyInJson(targetJson: any, keyToFind: string): Array<string> {
         if (typeof targetJson === 'object') {
@@ -263,7 +268,7 @@ export class JSONUtilityService {
      * [_getPathValueForKeyFromJson find elements from targetJson using json pathToFind]
      * @param  {any}      targetJson [source json from which you want to get data ]
      * @param  {Array<string>} pathToFind [ path array which contains all key to reach a particular value in JSON ]
-     * @return {[any]}              [ returned elements which matched the path ]
+     * @returns {[any]}              [ returned elements which matched the path ]
      */
     _getPathValueForKeyFromJson(targetJson: any, pathToFind: Array<string>) {
         if (typeof targetJson === 'object') {
@@ -278,7 +283,7 @@ export class JSONUtilityService {
      * @param  {any}      targetJson [source json from which you want to get data]
      * @param  {Array<string>} pathToFind [path array which contains all key to reach a particular value in JSON]
      * @param  {any}      valueToSet [value you want to set to targetJson]
-     * @return {[type]}              [returns json if set ]
+     * @returns {[type]}              [returns json if set ]
      */
     _setPathValueForKeyInJson(targetJson: any, pathToFind: Array<string>, valueToSet: any) {
         if (typeof targetJson === 'object') {
@@ -292,7 +297,7 @@ export class JSONUtilityService {
      * [_prettifyJson get pretty string of json ]
      * @param  {any}      targetJson [source json from which you want to get data]
      * @param  {boolean} htmlReturn [ true, if you want result as html string]
-     * @return {[string]}              [ string formatted json ]
+     * @returns {[string]}              [ string formatted json ]
      */
     _prettifyJson(targetJson: any, htmlReturn = false) {
       if (typeof targetJson === 'object') {
@@ -307,11 +312,11 @@ export class JSONUtilityService {
      **************************************************************************************************/
 
     /**
-     * [_getValueFromJsonqobj get all the values from jsonq object ]
+     * [_getValueFromJsonqObj get all the values from jsonq object ]
      * @param {any} jsonqObj             [ jsonq object ]
-     * @return {[array]}              [ returns array of values if available ]
+     * @returns {[array]}              [ returns array of values if available ]
      */
-    _getValueFromJsonqobj(jsonqObj: any) {
+    _getValueFromJsonqObj(jsonqObj: any) {
       if (typeof jsonqObj === 'object') {
           try {
               return jsonQ(jsonqObj).value();
@@ -326,7 +331,7 @@ export class JSONUtilityService {
     /**
      * [_getPathForKeyInJsonqObject get path from json matching a key ]
      * @param {any} jsonqObject             [ it must be an jsonQ type object ]
-     * @return {[Array<string>]}              [ returns array containing strings having the path of key ]
+     * @returns {[Array<string>]}              [ returns array containing strings having the path of key ]
      */
     _getPathForKeyInJsonqObject(jsonqObject: any): Array<string> {
         if (typeof jsonqObject === 'object') {
@@ -344,7 +349,7 @@ export class JSONUtilityService {
      * [_getIndexForKeyInJson get path from json matching a key ]
      * @param {any} josnqObj             [ it must be an jsonQ type object ]
      * @param {any} qualifier     [ to filter result pass a function or a part of object to search for index ]
-     * @return {[number]}              [ returns index if value found, if not returns -1 ]
+     * @returns {[number]}              [ returns index if value found, if not returns -1 ]
      */
     _getIndexForKeyInJson(josnqObj: any, qualifier: any): number {
         if (typeof josnqObj === 'object') {
@@ -366,7 +371,7 @@ export class JSONUtilityService {
      * [_getPathValueFromJsonqObject get value from json matching a path ]
      * @param {any} josnqObj             [ it must be an jsonQ type object ]
      * @param {Array<string>} path     [ array containing path strings which is a path of key in json ]
-     * @return {[any]}              [ returns value at path specified ]
+     * @returns {[any]}              [ returns value at path specified ]
      */
     _getPathValueFromJsonqObject(josnqObj: any, path: Array<string>): any {
         if (typeof josnqObj === 'object') {
@@ -384,7 +389,7 @@ export class JSONUtilityService {
      * [_getNthValueInJson get value from json at nth index ]
      * @param {any} josnqObj             [ it must be an jsonQ type object ]
      * @param {number} index     [ index of array  ]
-     * @return {[any]}              [ returns value at path specified ]
+     * @returns {[any]}              [ returns value at path specified ]
      */
     _getNthValueInJson(josnqObj: any, index: number): any {
         if (typeof josnqObj === 'object') {
@@ -406,7 +411,7 @@ export class JSONUtilityService {
      * [_getUniqueElements get unique elements from json matching a key ]
      * @param {any} targetJson             [ source json from which you want to find value ]
      * @param {string} keyToFind     [ actual key whose value to find ]
-     * @return {[array]}              [ returns an array of unique values. ]
+     * @returns {[array]}              [ returns an array of unique values. ]
      */
     _getUniqueElements(targetJson: any, keyToFind: string) {
         if (typeof targetJson === 'object') {
@@ -423,29 +428,33 @@ export class JSONUtilityService {
     /* tslint:disable */
     /**
      * [_findAllValuesInJson find all values from json matching a key ]
-     * @param {any} targetJson             [ source json from which you want to find values ]
+     * @param {any} jsonqObject             [ it must be an jsonQ type object ]
      * @param {string} keyToFind     [ actual key whose value to find ]
      * @param {any} qualifier     [ by default value is null, if null find all all values without filter, to filter result pass a function or a part of object to search ]
      * @param {boolean} outputValues     [ default is false, if false actual values array will be returned or if true returns jsonq object for further processing ]
-     * @return {[any]}              [ return value depends on 'outputValues' flag if 'outputValues' true actual values array will be returned or if 'outputValues' false returns jsonq object for further processing ]
+     * @returns {[any]}              [ return value depends on 'outputValues' flag if 'outputValues' true actual values array will be returned or if 'outputValues' false returns jsonq object for further processing ]
      */
     /* tslint:enable */
-    _findAllValuesInJson(targetJson: any, keyToFind: string, qualifier: any = null, outputValues = false): any {
-        if (typeof targetJson === 'object') {
-            if (qualifier !== null) {
-                if (typeof qualifier === 'function' || typeof qualifier === 'object') {
-                    if (outputValues) {
-                        return jsonQ(targetJson).find(keyToFind, qualifier).value();
+    _findAllValuesInJson(jsonqObject: any, keyToFind: string, qualifier: any = null, outputValues = false): any {
+        if (typeof jsonqObject === 'object') {
+            try {
+                if (qualifier !== null) {
+                    if (typeof qualifier === 'function' || typeof qualifier === 'object') {
+                        if (outputValues) {
+                            return jsonqObject.find(keyToFind, qualifier).value();
+                        }
+                        return jsonqObject.find(keyToFind, qualifier);
+                    } else {
+                        throw new TypeError('Incompatible type for keyTofind : it must be an array or an object or an function');
                     }
-                    return jsonQ(targetJson).find(keyToFind, qualifier);
                 } else {
-                    throw new TypeError('Incompatible type for keyTofind : it must be an array or an object or an function');
+                    if (outputValues) {
+                        return jsonqObject.find(keyToFind).value();
+                    }
+                    return jsonqObject.find(keyToFind);
                 }
-            } else {
-                if (outputValues) {
-                    return jsonQ(targetJson).find(keyToFind).value();
-                }
-                return jsonQ(targetJson).find(keyToFind);
+            } catch (err) {
+                throw new TypeError('Incompatible type for jsonqObj : it must be an jsonQ type object');
             }
         } else {
             throw new TypeError('Incompatible type for targetJson : it must be an array or an object');
@@ -458,7 +467,7 @@ export class JSONUtilityService {
      * @param {any} jsonqObj             [ it must be an jsonQ type object ]
      * @param {string} keyToFind     [ actual sibling key whose value to find ]
      * @param {boolean} outputValues     [ default is false, if false actual values array will be returned or if true returns jsonq object for further processing ]
-     * @return {[any]}              [ return value depends on 'outputValues' flag if 'outputValues' true actual values array will be returned or if 'outputValues' false returns jsonq object for further processing ]
+     * @returns {[any]}              [ return value depends on 'outputValues' flag if 'outputValues' true actual values array will be returned or if 'outputValues' false returns jsonq object for further processing ]
      */
     /* tslint:enable */
     _findSiblingsInJson(jsonqObj: any, keyToFind: string, outputValues = false): any {
@@ -482,7 +491,7 @@ export class JSONUtilityService {
      * @param {any} jsonqObj             [ it must be an jsonQ type object ]
      * @param {string} keyToFind     [ actual sibling key whose value to find ]
      * @param {boolean} outputValues     [ default is false, if false actual values array will be returned or if true returns jsonq object for further processing ]
-     * @return {[any]}              [ return value depends on 'outputValues' flag if 'outputValues' true actual values array will be returned or if 'outputValues' false returns jsonq object for further processing ]
+     * @returns {[any]}              [ return value depends on 'outputValues' flag if 'outputValues' true actual values array will be returned or if 'outputValues' false returns jsonq object for further processing ]
      */
     /* tslint:enable */
     _findParentsInJson(jsonqObj: any, keyToFind: string, outputValues = false): any {
@@ -506,7 +515,7 @@ export class JSONUtilityService {
      * @param {any} jsonqObj             [ it must be an jsonQ type object ]
      * @param {string} keyToFind     [ actual closest key whose value to find ]
      * @param {boolean} outputValues     [ default is false, if false actual values array will be returned or if true returns jsonq object for further processing ]
-     * @return {[any]}              [ return value depends on 'outputValues' flag if 'outputValues' true actual values array will be returned or if 'outputValues' false returns jsonq object for further processing ]
+     * @returns {[any]}              [ return value depends on 'outputValues' flag if 'outputValues' true actual values array will be returned or if 'outputValues' false returns jsonq object for further processing ]
      */
     /* tslint:enable */
     _findClosestKeyInJson(jsonqObj: any, keyToFind: string, outputValues = false): any {
@@ -530,12 +539,12 @@ export class JSONUtilityService {
      * @param {any} jsonqObj             [ it must be an jsonQ type object ]
      * @param {any} qualifier     [ custom functional logic to search json in targetJson or an json object or json array  ]
      * @param {boolean} outputValues     [ default is false, if false actual values array will be returned or if true returns jsonq object for further processing ]
-     * @return {[any]}              [ return filtered value depends on 'outputValues' flag if 'outputValues' true actual values array will be returned or if 'outputValues' false returns jsonq object for further processing ]
+     * @returns {[any]}              [ return filtered value depends on 'outputValues' flag if 'outputValues' true actual values array will be returned or if 'outputValues' false returns jsonq object for further processing ]
      */
     /* tslint:enable */
     _getFilteredListFromJson(jsonqObj: any, qualifier: any, outputValues = false): any {
         if ( typeof jsonqObj === 'object') {
-            if (typeof qualifier === 'function' || typeof qualifier === 'object') {
+            if (typeof qualifier === 'function' || typeof qualifier === 'object' || typeof qualifier === 'string') {
                 try {
                     if (outputValues) {
                         return jsonqObj.filter(qualifier).value();
@@ -545,7 +554,7 @@ export class JSONUtilityService {
                     throw new TypeError('Incompatible type for jsonqObj : it must be an jsonQ type object');
                 }
             } else {
-                throw new TypeError('Incompatible type for qualifier : it must be an array or an object or a function');
+                throw new TypeError('Incompatible type for qualifier : it must be an array or an object or a function or a string');
             }
         } else {
             throw new TypeError('Incompatible type for jsonqObj : it must be an array or an object');
@@ -560,7 +569,7 @@ export class JSONUtilityService {
      * [_setValueToJson set value into json against a key ]
      * @param {any} jsonqObj             [ it must be an jsonQ type object ]
      * @param {any} valToSet     [ value to set in json against a key (can be a valid json type) ]
-     * @return {[void]}              [ void ]
+     * @returns {[void]}              [ void ]
      */
     _setValueToJson(jsonqObj: any, valToSet: any): void {
         if ( typeof jsonqObj === 'object') {
@@ -578,7 +587,7 @@ export class JSONUtilityService {
      * [_appendValueToJson append value into json against a key ]
      * @param {any} jsonqObj             [ it must be an jsonQ type object ]
      * @param {any} valToSet     [ value to append in json against a key (can be a valid json type) ]
-     * @return {[void]}              [ void ]
+     * @returns {[void]}              [ void ]
      */
     _appendValueToJson(jsonqObj: any, valToSet: any): void {
         if ( typeof jsonqObj === 'object') {
@@ -596,7 +605,7 @@ export class JSONUtilityService {
      * [_prependValueToJson prepend value into json against a key ]
      * @param {any} jsonqObj             [ it must be an jsonQ type object ]
      * @param {any} valToSet     [ value to prepend in json against a key (can be a valid json type) ]
-     * @return {[void]}              [ void ]
+     * @returns {[void]}              [ void ]
      */
     _prependValueToJson(jsonqObj: any, valToSet: any): void {
         if ( typeof jsonqObj === 'object') {
@@ -615,7 +624,7 @@ export class JSONUtilityService {
      * @param {any} jsonqObj             [ it must be an jsonQ type object ]
      * @param {any} valToSet     [ value to append in json against a key (can be a valid json type) ]
      * @param {any} index     [ index at which you want to append value ]
-     * @return {[void]}              [ void ]
+     * @returns {[void]}              [ void ]
      */
     _appendValueAtIndexToJson(jsonqObj: any, valToSet: any, index: number): void {
         if ( typeof jsonqObj === 'object') {
@@ -638,7 +647,7 @@ export class JSONUtilityService {
      * @param {any} jsonqObj             [ it must be an jsonQ type object ]
      * @param {any} valToSet     [ value to set in json against a path of key (can be a valid json type) ]
      * @param {Array<string>} path     [ path array which contains all key to reach a particular value in JSON ]
-     * @return {[void]}              [ void ]
+     * @returns {[void]}              [ void ]
      */
     _setPathValueToJsonqObject(jsonqObj: any, valToSet: any, path: Array<string>): void {
         if ( typeof jsonqObj === 'object') {
@@ -656,7 +665,7 @@ export class JSONUtilityService {
      * [_loopJsonqObject loop through jsonq object finding key, value and path of json ]
      * @param {any} jsonqObj             [ it must be an jsonQ type object ]
      * @param {[Function]} callback             [ callback function containing key, value, path  ]
-     * @return {[void]}              [ void ]
+     * @returns {[void]}              [ void ]
      */
     _loopJsonqObject(jsonqObj: any, callback): void {
         if ( typeof jsonqObj === 'object') {
@@ -677,7 +686,7 @@ export class JSONUtilityService {
     /**
      * [_refreshJsonqObject After any manipulation on jsonQ object you must call refresh method. ]
      * @param {any} jsonqObj             [ it must be an jsonQ type object ]
-     * @return {[void]}              [ void ]
+     * @returns {[void]}              [ void ]
      */
     _refreshJsonqObject(jsonqObj: any): void {
         if ( typeof jsonqObj === 'object') {
